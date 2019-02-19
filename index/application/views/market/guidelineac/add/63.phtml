@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>商户广告 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/stall_adv/stall_adv.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=151976895">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">商户广告 - 添加</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_add_post/add_post" enctype="multipart/form-data" method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">摊位编号：</span>
+                <select class="input-sm form-control input-s-sm inline" name="field_id[182]" >
+                    <option value="LK001">LK001</option>
+                    <option value="LK002">LK002</option>
+                    <option value="LK003">LK003</option>
+                    <option value="LK004">LK004</option>
+                    <option value="LK005">LK005</option>
+                    <option value="LK006">LK006</option>
+                    <option value="LK007">LK007</option>
+                    <option value="LK008">LK008</option>
+                    <option value="LK009">LK009</option>
+                    <option value="LK010">LK010</option>
+                    <option value="LK011">LK011</option>
+                    <option value="LK012">LK012</option>
+                    <option value="LK013">LK013</option>
+                    <option value="LK014">LK014</option>
+                    <option value="LK015">LK015</option>
+                    <option value="LK016">LK016</option>
+                    <option value="LK017">LK017</option>
+                    <option value="LK018">LK018</option>
+                    <option value="LK019">LK019</option>
+                    <option value="LK020">LK020</option>
+                    <option value="LK021">LK021</option>
+                    <option value="LK022">LK022</option>
+                    <option value="LK023">LK023</option>
+                    <option value="LK024">LK024</option>
+                    <option value="LK025">LK025</option>
+                    <option value="LK026">LK026</option>
+                    <option value="LK027">LK027</option>
+                    <option value="LK028">LK028</option>
+                    <option value="LK029">LK029</option>
+                    <option value="LK030">LK030</option>
+                    <option value="LK031">LK031</option>
+                    <option value="LK032">LK032</option>
+                    <option value="LK033">LK033</option>
+                    <option value="LK034">LK034</option>
+                    <option value="LK035">LK035</option>
+                    <option value="LK036">LK036</option>
+                    <option value="LK037">LK037</option>
+                    <option value="LK038">LK038</option>
+                    <option value="LK039">LK039</option>
+                    <option value="LK040">LK040</option>
+                    <option value="888">888</option>
+                </select>
+            </div>
+            <div class="column_adv">
+                <span class="text">广告类别：</span>
+                <div class="radio-item">
+                    <input type="radio" name="field_id[183]" id="male" value="1">
+                    <label for="male" class="radio-label" style="width: 100px">全屏</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="field_id[183]" id="female" value="2">
+                    <label for="female" class="radio-label">右侧</label>
+                </div>
+            </div>
+        </div>
+        <!--证件图片行-->
+        <div class="image-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="">
+                </div>
+                <input class="img-upload" type="file" name="field_id[184]" accept="image/*">
+                <div class="text">
+                    全屏广告1920*1080<br/>右侧广告1280*550
+                </div>
+            </div>
+            <div class="column">
+            </div>
+        </div>
+        <!--证件图片行-->
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/stall_adv/add.js?hash=985285403"></script>
+</body>
+</html>

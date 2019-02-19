@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>巡查人员 - 修改</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=272294970">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">巡查人员 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post"  method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">账号：</span>
+                <input type="text" name="field_id[57][<?php echo $data[57]['id']; ?>]" value="<?php echo $data[57]['field_value']; ?>" required>
+            </div>
+
+        </div>
+
+
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script src="<?php echo $host;?>/static/market/jxproj/add.js?hash=981381114"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>触摸屏单页广告 - 修改</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=656257414">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">触摸屏单页广告 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <input type="hidden" id="" name="field_id[181][<?php echo $data[181]['id']; ?>]" value="<?php echo date('Y-m-d'); ?>">
+       <!-- <input type="hidden" name="id" required value="78">
+        <input type="hidden" name="page" required value="{page}">-->
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">标题：</span>
+                <input type="text" name="field_id[179][<?php echo $data[179]['id']; ?>]" value="<?php echo $data[179]['field_value']; ?>" required>
+            </div>
+        </div>
+        <!--证件图片行-->
+        <div class="image-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                   <img src="/upload/http://img.linkunst.com/78/20190104/48056img5c2f0042639d4.jpg" alt="">
+                </div>
+                <input class="img-upload" type="file" name="field_id[180][<?php echo $data[180]['id']; ?>]" value="<?php echo $data[180]['field_value']; ?>" accept="image/*">
+                <input class="img-delete" type="hidden" name="img" value="0">
+                <div class="text">图片</div>
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+    <div class="modal">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body">
+            <div class="upload">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn">请选择图片</button>
+                <span class="name"></span>
+                <input id="modal-photo" type="file" accept="image/*">
+            </div>
+            <div class="image">
+                <div class="clip">
+                    <img src="" id="clip-image">
+                </div>
+                <div class="preview"></div>
+            </div>
+            <div class="operate">
+                <div class="rotate">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn"> 向右旋转</button>
+                </div>
+                <div class="scale">
+                    <button class="button-s fa fa-arrows" id="move-btn"> </button>
+                    <button class="button-s fa fa-search-plus" id="zoom-big-btn"> </button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn"> </button>
+                    <button class="button-s fa fa-refresh" id="reset-btn"> </button>
+                </div>
+                <div class="save">
+                    <button class="button-l fa fa-save" id="save-btn"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/sing_page/edit.js?hash=973230266"></script>
+</body>
+</html>

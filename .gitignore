@@ -1,0 +1,7 @@
+.idea/
+vendor/
+composer.lock
+readme.txt
+.htaccess
+conf/application.ini
+public/upload

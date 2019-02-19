@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>商户管理 - 修改</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host; ?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host; ?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host; ?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host; ?>/static/market/add&edit&show.css?hash=290471742">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">商户管理 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+
+        <input type="hidden" id="" name="redirect"
+               value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <!--头像照片行-->
+        <div class="photo-row">
+            <div class="input-photo">
+                <div class="del-btn"></div>
+                <img src="<?php echo $data[340]['field_value'] == '' ? $host . '/static/image/input-image.png' : $data[340]['field_value']; ?>"
+                     data-has="<?php echo $data[340]['field_value'] == '' ? 0 : 1; ?>" id="preview-photo">
+                <input type="hidden" name="field_id[340][<?php echo $data[340]['id']; ?>]" id="photo"
+                       value="<?php echo $data[340]['field_value']; ?>">
+                <input type="hidden" name="photo_delete" id="photo_delete">
+            </div>
+            <div class="label">个人照片</div>
+        </div>
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">姓名：</span>
+                <input type="text" name="field_id[85][<?php echo $data[85]['id']; ?>]" value="<?php echo $data[85]['field_value']; ?>" required>
+            </div>
+            <div class="column">
+                <span class="text">性别：</span>
+                <div class="radio-item">
+                    <input type="radio" name="field_id[293][<?php echo $data[293]['id']; ?>]" id="male"
+                           value="0" <?php echo $data[293]['field_value'] == 0 ? 'checked' : ''; ?> >
+                    <label for="male" class="radio-label">男</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="field_id[293][<?php echo $data[293]['id']; ?>]" id="female"
+                           value="1" <?php echo $data[293]['field_value'] == 1 ? 'checked' : ''; ?> >
+                    <label for="female" class="radio-label">女</label>
+                </div>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">民族：</span>
+                <input type="text" name="field_id[294][<?php echo $data[294]['id']; ?>]" required value="<?php echo $data[294]['field_value']; ?>">
+            </div>
+            <div class="column">
+                <span class="text">党团关系：</span>
+                <div class="radio-item">
+                    <input id="party" type="radio" name="field_id[295][<?php echo $data[295]['id']; ?>]"
+                           value="1" <?php echo $data[293]['field_value'] == 0 ? 'checked' : ''; ?> >
+                    <label for="party" class="radio-label">党员</label>
+                </div>
+                <div class="radio-item">
+                    <input id="mass" type="radio" name="field_id[295][<?php echo $data[295]['id']; ?>]"
+                           value="0" <?php echo $data[293]['field_value'] == 1 ? 'checked' : ''; ?> >
+                    <label for="mass" class="radio-label">群众</label>
+                </div>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">联系方式：</span>
+                <input type="text" name="field_id[86][<?php echo $data[86]['id']; ?>]" required value="<?php echo $data[86]['field_value']; ?>">
+            </div>
+            <div class="column">
+                <span class="text">身份证号：</span>
+                <input type="text" name="field_id[296][<?php echo $data[296]['id']; ?>]" required value="<?php echo $data[296]['field_value']; ?>">
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">学历：</span>
+                <select name="field_id[297][<?php echo $data[297]['id']; ?>]">
+                    <option value="1" <?php echo $data[297]['field_value'] == 1 ? 'selected' : ''; ?> >小学</option>
+                    <option value="2" <?php echo $data[297]['field_value'] == 2 ? 'selected' : ''; ?> >初中</option>
+                    <option value="3" <?php echo $data[297]['field_value'] == 3 ? 'selected' : ''; ?> >高中</option>
+                    <option value="4" <?php echo $data[297]['field_value'] == 4 ? 'selected' : ''; ?> >大专</option>
+                    <option value="5" <?php echo $data[297]['field_value'] == 5 ? 'selected' : ''; ?> >本科</option>
+                    <option value="6" <?php echo $data[297]['field_value'] == 6 ? 'selected' : ''; ?> >研究生</option>
+                </select>
+            </div>
+            <div class="column">
+                <span class="text">家庭住址：</span>
+                <input type="text" name="field_id[298][<?php echo $data[298]['id']; ?>]" required value="<?php echo $data[298]['field_value']; ?>">
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">入驻时间：</span>
+                <input id="check_in_date" type="text" name="field_id[299][<?php echo $data[299]['id']; ?>]" required readonly
+                       value="<?php echo $data[299]['field_value']; ?>">
+            </div>
+            <?php if (isset($data[300])) { ?>
+                <div class="column">
+                    <span class="text">秤具编号：</span>
+                    <input type="text" name="field_id[300][<?php echo $data[300]['id']; ?>]" required value="<?php echo $data[300]['field_value']; ?>"
+                           disabled>
+                    <input type="hidden" name="field_id[300][<?php echo $data[300]['id']; ?>]" required
+                           value="<?php echo $data[300]['field_value']; ?>">
+                </div>
+            <?php } ?>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">经营范围：</span>
+                <select name="field_id[301][<?php echo $data[301]['id']; ?>]">
+                    <option disabled>--副食品类--</option>
+
+                    <option value="59" selected>&nbsp;&nbsp;&nbsp;&nbsp;|--奶制品类</option>
+
+                    <option value="80">&nbsp;&nbsp;&nbsp;&nbsp;|--调味品类</option>
+
+                    <option value="111">&nbsp;&nbsp;&nbsp;&nbsp;|--养生补品类</option>
+
+                    <option value="113">&nbsp;&nbsp;&nbsp;&nbsp;|--干坚果炒货类</option>
+
+                    <option value="114">&nbsp;&nbsp;&nbsp;&nbsp;|--饮食小吃类</option>
+
+                    <option value="133">&nbsp;&nbsp;&nbsp;&nbsp;|--包装食品类</option>
+
+                    <option value="134">&nbsp;&nbsp;&nbsp;&nbsp;|--预包装食品类</option>
+
+                    <option value="147">&nbsp;&nbsp;&nbsp;&nbsp;|--香料类</option>
+
+                    <option value="150">&nbsp;&nbsp;&nbsp;&nbsp;|--干货食品类</option>
+                    <option disabled>--禽蛋类--</option>
+
+                    <option value="207">&nbsp;&nbsp;&nbsp;&nbsp;|--禽蛋</option>
+
+                    <option value="232">&nbsp;&nbsp;&nbsp;&nbsp;|--鸡蛋</option>
+                    <option disabled>--蔬菜--</option>
+
+                    <option value="47">&nbsp;&nbsp;&nbsp;&nbsp;|--新鲜蔬菜类</option>
+
+                    <option value="135">&nbsp;&nbsp;&nbsp;&nbsp;|--干菜类</option>
+
+                    <option value="139">&nbsp;&nbsp;&nbsp;&nbsp;|--水发菜类</option>
+
+                    <option value="145">&nbsp;&nbsp;&nbsp;&nbsp;|--菌菇类</option>
+
+                    <option value="216">&nbsp;&nbsp;&nbsp;&nbsp;|--豆芽</option>
+                    <option disabled>--水产--</option>
+
+                    <option value="88">&nbsp;&nbsp;&nbsp;&nbsp;|--淡水鱼类</option>
+
+                    <option value="89">&nbsp;&nbsp;&nbsp;&nbsp;|--淡水壳贝水产类</option>
+
+                    <option value="127">&nbsp;&nbsp;&nbsp;&nbsp;|--干货水产品类</option>
+
+                    <option value="137">&nbsp;&nbsp;&nbsp;&nbsp;|--生猛海鲜类</option>
+
+                    <option value="151">&nbsp;&nbsp;&nbsp;&nbsp;|--壳贝海产类</option>
+
+                    <option value="205">&nbsp;&nbsp;&nbsp;&nbsp;|--海鲜</option>
+
+                    <option value="277">&nbsp;&nbsp;&nbsp;&nbsp;|--水发</option>
+
+                    <option value="278">&nbsp;&nbsp;&nbsp;&nbsp;|--黄鳝</option>
+                    <option disabled>--冷冻品--</option>
+
+                    <option value="116">&nbsp;&nbsp;&nbsp;&nbsp;|--冻海产品类</option>
+
+                    <option value="228">&nbsp;&nbsp;&nbsp;&nbsp;|--冰鲜</option>
+
+                    <option value="229">&nbsp;&nbsp;&nbsp;&nbsp;|--冻冰</option>
+                    <option disabled>--熟食--</option>
+
+                    <option value="51">&nbsp;&nbsp;&nbsp;&nbsp;|--熟食卤味类</option>
+
+                    <option value="115">&nbsp;&nbsp;&nbsp;&nbsp;|--熟食制品类</option>
+
+                    <option value="138">&nbsp;&nbsp;&nbsp;&nbsp;|--腌渍酱菜类</option>
+
+                    <option value="140">&nbsp;&nbsp;&nbsp;&nbsp;|--风味肉制品类</option>
+
+                    <option value="221">&nbsp;&nbsp;&nbsp;&nbsp;|--腌制品</option>
+
+                    <option value="223">&nbsp;&nbsp;&nbsp;&nbsp;|--卤味</option>
+                    <option disabled>--豆制品--</option>
+
+                    <option value="122">&nbsp;&nbsp;&nbsp;&nbsp;|--豆类</option>
+
+                    <option value="270">&nbsp;&nbsp;&nbsp;&nbsp;|--豆制品</option>
+                    <option disabled>--机面--</option>
+
+                    <option value="60">&nbsp;&nbsp;&nbsp;&nbsp;|--糕点食品类</option>
+
+                    <option value="117">&nbsp;&nbsp;&nbsp;&nbsp;|--加工食品类</option>
+
+                    <option value="141">&nbsp;&nbsp;&nbsp;&nbsp;|--面食制品类</option>
+
+                    <option value="222">&nbsp;&nbsp;&nbsp;&nbsp;|--面类</option>
+                    <option disabled>--粮油--</option>
+
+                    <option value="54">&nbsp;&nbsp;&nbsp;&nbsp;|--五谷杂粮类</option>
+
+                    <option value="90">&nbsp;&nbsp;&nbsp;&nbsp;|--粮食制品类</option>
+
+                    <option value="128">&nbsp;&nbsp;&nbsp;&nbsp;|--食用油类</option>
+
+                    <option value="239">&nbsp;&nbsp;&nbsp;&nbsp;|--醋类</option>
+
+                    <option value="240">&nbsp;&nbsp;&nbsp;&nbsp;|--盐类</option>
+                    <option disabled>--水果--</option>
+
+                    <option value="76">&nbsp;&nbsp;&nbsp;&nbsp;|--新鲜水果类</option>
+                    <option disabled>--其他--</option>
+
+                    <option value="58">&nbsp;&nbsp;&nbsp;&nbsp;|--酒类</option>
+
+                    <option value="105">&nbsp;&nbsp;&nbsp;&nbsp;|--通信业务</option>
+
+                    <option value="238">&nbsp;&nbsp;&nbsp;&nbsp;|--膳食营养补充食品</option>
+
+                    <option value="271">&nbsp;&nbsp;&nbsp;&nbsp;|--服务类</option>
+
+                    <option value="272">&nbsp;&nbsp;&nbsp;&nbsp;|--超市类</option>
+
+                    <option value="273">&nbsp;&nbsp;&nbsp;&nbsp;|--理发类</option>
+
+                    <option value="276">&nbsp;&nbsp;&nbsp;&nbsp;|--菜种类</option>
+                    <option disabled>--百货--</option>
+
+                    <option value="65">&nbsp;&nbsp;&nbsp;&nbsp;|--日用厨具类</option>
+
+                    <option value="106">&nbsp;&nbsp;&nbsp;&nbsp;|--日用杂货类</option>
+
+                    <option value="107">&nbsp;&nbsp;&nbsp;&nbsp;|--时装服饰类</option>
+
+                    <option value="109">&nbsp;&nbsp;&nbsp;&nbsp;|--箱包类</option>
+
+                    <option value="213">&nbsp;&nbsp;&nbsp;&nbsp;|--杂货</option>
+
+                    <option value="243">&nbsp;&nbsp;&nbsp;&nbsp;|--殡葬用品</option>
+
+                    <option value="244">&nbsp;&nbsp;&nbsp;&nbsp;|--鞋类</option>
+
+                    <option value="245">&nbsp;&nbsp;&nbsp;&nbsp;|--五金</option>
+
+                    <option value="246">&nbsp;&nbsp;&nbsp;&nbsp;|--日用百货</option>
+
+                    <option value="247">&nbsp;&nbsp;&nbsp;&nbsp;|--小家电</option>
+
+                    <option value="248">&nbsp;&nbsp;&nbsp;&nbsp;|--床上用品</option>
+
+                    <option value="249">&nbsp;&nbsp;&nbsp;&nbsp;|--文具用品</option>
+                    <option disabled>--肉类--</option>
+
+                    <option value="94">&nbsp;&nbsp;&nbsp;&nbsp;|--鲜牛肉类</option>
+
+                    <option value="123">&nbsp;&nbsp;&nbsp;&nbsp;|--羊肉</option>
+
+                    <option value="201">&nbsp;&nbsp;&nbsp;&nbsp;|--猪肉</option>
+
+                    <option value="226">&nbsp;&nbsp;&nbsp;&nbsp;|--猪头肉</option>
+
+                    <option value="259">&nbsp;&nbsp;&nbsp;&nbsp;|--肥肠</option>
+
+                    <option value="279">&nbsp;&nbsp;&nbsp;&nbsp;|--狗肉</option>
+                    <option disabled>--冷鲜禽--</option>
+
+                    <option value="142">&nbsp;&nbsp;&nbsp;&nbsp;|--白条禽类</option>
+
+                    <option value="143">&nbsp;&nbsp;&nbsp;&nbsp;|--分割禽肉类</option>
+
+                    <option value="144">&nbsp;&nbsp;&nbsp;&nbsp;|--冻禽肉类</option>
+
+                    <option value="260">&nbsp;&nbsp;&nbsp;&nbsp;|--血类</option>
+                    <option disabled>--房产类--</option>
+
+                    <option value="242">&nbsp;&nbsp;&nbsp;&nbsp;|--中介房产类</option>
+                    <option disabled>--预包装类--</option>
+                    <option disabled>--散装食品--</option>
+                    <option disabled>--餐饮服务--</option>
+
+                    <option value="267">&nbsp;&nbsp;&nbsp;&nbsp;|--饭店</option>
+
+                    <option value="268">&nbsp;&nbsp;&nbsp;&nbsp;|--茶庄</option>
+
+                    <option value="269">&nbsp;&nbsp;&nbsp;&nbsp;|--足浴店</option>
+                    <option disabled>--干品--</option>
+                    <option disabled>--鲜品--</option>
+
+                    <option value="263">&nbsp;&nbsp;&nbsp;&nbsp;|--海鲜</option>
+                </select>
+            </div>
+            <div class="column">
+                <span class="text">摊位编号：</span>
+                <select name="field_id[87][<?php echo $data[87]['id']; ?>]">
+                    <option value="4479" selected>888</option>
+                    <option value="3931">LK001</option>
+                    <option value="3932">LK002</option>
+                    <option value="3933">LK003</option>
+                    <option value="3935">LK004</option>
+                    <option value="3936">LK005</option>
+                    <option value="3937">LK006</option>
+                    <option value="3938">LK007</option>
+                    <option value="3939">LK008</option>
+                    <option value="3940">LK009</option>
+                    <option value="3941">LK010</option>
+                    <option value="3942">LK011</option>
+                    <option value="3943">LK012</option>
+                    <option value="3944">LK013</option>
+                    <option value="3945">LK014</option>
+                    <option value="3946">LK015</option>
+                    <option value="3947">LK016</option>
+                    <option value="3948">LK017</option>
+                    <option value="3949">LK018</option>
+                    <option value="3950">LK019</option>
+                    <option value="3951">LK020</option>
+                    <option value="3952">LK021</option>
+                    <option value="3953">LK022</option>
+                    <option value="3954">LK023</option>
+                    <option value="3955">LK024</option>
+                    <option value="3956">LK025</option>
+                    <option value="3957">LK026</option>
+                    <option value="3958">LK027</option>
+                    <option value="3959">LK028</option>
+                    <option value="3960">LK029</option>
+                    <option value="3961">LK030</option>
+                    <option value="3962">LK031</option>
+                    <option value="3963">LK032</option>
+                    <option value="3964">LK033</option>
+                    <option value="3965">LK034</option>
+                    <option value="3966">LK035</option>
+                    <option value="3967">LK036</option>
+                    <option value="3968">LK037</option>
+                    <option value="3969">LK038</option>
+                    <option value="3970">LK039</option>
+                    <option value="3971">LK040</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">星级：</span>
+                <select name="field_id[302][<?php echo $data[302]['id']; ?>]">
+                    <option value="1" <?php echo $data[302]['field_value'] == 1 ? 'selected' : ''; ?>>一星</option>
+                    <option value="2" <?php echo $data[302]['field_value'] == 2 ? 'selected' : ''; ?>>二星</option>
+                    <option value="3" <?php echo $data[302]['field_value'] == 3 ? 'selected' : ''; ?>>三星</option>
+                    <option value="4" <?php echo $data[302]['field_value'] == 4 ? 'selected' : ''; ?>>四星</option>
+                    <option value="5" <?php echo $data[302]['field_value'] == 5 ? 'selected' : ''; ?>>五星</option>
+                </select>
+            </div>
+            <div 5lass="column">
+            </div>
+        </div>
+        <!--证件图片行-->
+        <div class="image-row">
+            <div class="column">
+                <div class="image input-photo3">
+                    <div class="del-btn3 del-btn"></div>
+                    <img src="<?php echo $data[303]['field_value'] == '' ? $host . '/static/image/input-image.png' : $data[303]['field_value']; ?>"
+                         data-has="<?php echo $data[303]['field_value'] == '' ? 0 : 1; ?>" id="preview-photo3">
+                </div>
+                <input class="img-upload" type="hidden" name="field_id[303][<?php echo $data[303]['id']; ?>]"
+                       value="<?php echo $data[303]['field_value']; ?>" accept="image/*" id="business_img">
+                <input class="img-delete" type="hidden" name="business_img_delete" value="0" id="business_img_delete">
+                <div class="text">营业执照图片</div>
+            </div>
+            <div class="column">
+                <div class="image input-photo4">
+                    <div class="del-btn4 del-btn"></div>
+                    <img src="<?php echo $data[304]['field_value'] == '' ? $host . '/static/image/input-image.png' : $data[304]['field_value']; ?>"
+                         data-has="<?php echo $data[304]['field_value'] == '' ? 0 : 1; ?>" id="preview-photo4">
+                </div>
+                <input class="img-upload" type="hidden" name="field_id[304][<?php echo $data[304]['id']; ?>]"
+                       value="<?php echo $data[304]['field_value']; ?>" accept="image/*" id="health_img">
+                <input class="img-delete" type="hidden" name="health_img_delete" value="0" id="health_img_delete">
+                <div class="text">健康证图片</div>
+            </div>
+        </div>
+        <div class="image-row">
+            <div class="column">
+                <div class="image input-photo5">
+                    <div class="del-btn5 del-btn"></div>
+                    <img src="<?php echo $data[305]['field_value'] == '' ? $host . '/static/image/input-image.png' : $data[305]['field_value']; ?>"
+                         data-has="<?php echo $data[304]['field_value'] == '' ? 0 : 1; ?>" id="preview-photo5">
+                </div>
+                <input class="img-upload" type="hidden" name="field_id[304][<?php echo $data[305]['id']; ?>]"
+                       value="<?php echo $data[305]['field_value']; ?>" accept="image/*" id="id_number_img">
+                <input class="img-delete" type="hidden" name="id_number_img_delete" value="0" id="id_number_img_delete">
+                <div class="text">身份证图片</div>
+            </div>
+            <div class="column">
+                <div class="image input-photo1">
+                    <div class="del-btn1 del-btn"></div>
+                    <img src="<?php echo $data[306]['field_value'] == '' ? $host . '/static/image/input-image.png' : $data[306]['field_value']; ?>"
+                         data-has="<?php echo $data[306]['field_value'] == '' ? 0 : 1; ?>" id="preview-photo1">
+                </div>
+                <input class="img-upload" type="hidden" name="field_id[306][<?php echo $data[306]['id']; ?>]"
+                       value="<?php echo $data[306]['field_value']; ?>" accept="image/*" id="zhifubao_img">
+                <input class="img-delete" type="hidden" name="zhifubao_img_delete" value="0" id="zhifubao_img_delete">
+
+                <div class="text">支付宝图片</div>
+            </div>
+        </div>
+        <div class="image-row">
+            <div class="column">
+                <div class="image input-photo2">
+                    <div class="del-btn2 del-btn"></div>
+                    <img src="<?php echo $data[307]['field_value'] == '' ? $host . '/static/image/input-image.png' : $data[307]['field_value']; ?>"
+                         data-has="<?php echo $data[307]['field_value'] == '' ? 0 : 1; ?>" id="preview-photo2">
+                </div>
+                <input class="img-upload" type="hidden" name="field_id[307][<?php echo $data[307]['id']; ?>]"
+                       value="<?php echo $data[307]['field_value']; ?>" accept="image/*" id="weixin_img">
+                <input class="img-delete" type="hidden" name="weixin_img_delete" value="0" id="weixin_img_delete">
+                <div class="text">微信图片</div>
+            </div>
+            <div class="column">
+                <div class="image input-photo6">
+                    <div class="del-btn6 del-btn"></div>
+                    <img src="<?php echo $data[308]['field_value'] == '' ? $host . '/static/image/input-image.png' : $data[308]['field_value']; ?>"
+                         data-has="<?php echo $data[308]['field_value'] == '' ? 0 : 1; ?>" id="preview-photo6">
+                </div>
+                <input class="img-upload" type="hidden" name="field_id[308][<?php echo $data[308]['id']; ?>]"
+                       value="<?php echo $data[308]['field_value']; ?>" accept="image/*" id="other_img">
+                <input class="img-delete" type="hidden" name="other_img_delete" value="0" id="other_img_delete">
+                <div class="text">流通许可证</div>
+            </div>
+        </div>
+        <div class="image-row">
+            <div class="column">
+                <div class="image input-photo7">
+                    <div class="del-btn7 del-btn"></div>
+                    <img src="<?php echo $data[309]['field_value'] == '' ? $host . '/static/image/input-image.png' : $data[309]['field_value']; ?>"
+                         data-has="<?php echo $data[309]['field_value'] == '' ? 0 : 1; ?>" id="preview-photo7">
+                </div>
+                <input class="img-upload" type="hidden" name="field_id[309][<?php echo $data[309]['id']; ?>]"
+                       value="<?php echo $data[309]['field_value']; ?>" accept="image/*" id="zjnx_img">
+                <input class="img-delete" type="hidden" name="zjnx_img_delete" value="0" id="zjnx_img_delete">
+                <div class="text">农商静态码</div>
+            </div>
+            <div class="column">
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+    <div class="modal">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body">
+            <div class="upload">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn">请选择图片</button>
+                <span class="name"></span>
+                <input id="modal-photo" type="file" accept="image/*">
+            </div>
+            <div class="image">
+                <div class="clip">
+                    <img src="" id="clip-image">
+                </div>
+                <div class="preview"></div>
+            </div>
+            <div class="operate">
+                <div class="rotate">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn"> 向右旋转</button>
+                </div>
+                <div class="scale">
+                    <button class="button-s fa fa-arrows" id="move-btn"></button>
+                    <button class="button-s fa fa-search-plus" id="zoom-big-btn"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn"></button>
+                </div>
+                <div class="save">
+                    <button class="button-l fa fa-save" id="save-btn"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal1">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body1">
+            <div class="upload1">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn1">请选择图片</button>
+                <span class="name1"></span>
+                <input id="modal_photo1" type="file" accept="image/*">
+            </div>
+            <div class="image1">
+                <div class="clip1">
+                    <img src="" id="clip-image1">
+                </div>
+                <div class="preview1"></div>
+            </div>
+            <div class="operate1">
+                <div class="rotate1">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn1"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn1"> 向右旋转</button>
+                </div>
+                <div class="scale1">
+                    <button class="button-s fa fa-arrows" id="move-btn1"></button>
+                    <button class="button-s fa fa-search-plus" id="zoom_big_btn1"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn1"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn1"></button>
+                </div>
+                <div class="save1">
+                    <button class="button-l1 fa fa-save" id="save-btn1"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal2">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body2">
+            <div class="upload2">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn2">请选择图片</button>
+                <span class="name2"></span>
+                <input id="modal_photo2" type="file" accept="image/*">
+            </div>
+            <div class="image2">
+                <div class="clip2">
+                    <img src="" id="clip-image2">
+                </div>
+                <div class="preview2"></div>
+            </div>
+            <div class="operate2">
+                <div class="rotate2">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn2"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn2"> 向右旋转</button>
+                </div>
+                <div class="scale2">
+                    <button class="button-s fa fa-arrows" id="move-btn2"></button>
+                    <button class="button-s fa fa-search-plus" id="zoom_big_btn2"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn2"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn2"></button>
+                </div>
+                <div class="save2">
+                    <button class="button-l2 fa fa-save" id="save-btn2"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal3">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body3">
+            <div class="upload3">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn3">请选择图片</button>
+                <span class="name3"></span>
+                <input id="modal_photo3" type="file" accept="image/*">
+            </div>
+            <div class="image3">
+                <div class="clip3">
+                    <img src="" id="clip-image3">
+                </div>
+                <div class="preview3"></div>
+            </div>
+            <div class="operate3">
+                <div class="rotate3">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn3"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn3"> 向右旋转</button>
+                </div>
+                <div class="scale3">
+                    <button class="button-s fa fa-arrows" id="move-btn3"></button>
+                    <button class="button-s fa fa-search-plus" id="zoom_big_btn3"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn3"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn3"></button>
+                </div>
+                <div class="save3">
+                    <button class="button-l3 fa fa-save" id="save-btn3"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal4">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body4">
+            <div class="upload4">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn4">请选择图片</button>
+                <span class="name4"></span>
+                <input id="modal_photo4" type="file" accept="image/*">
+            </div>
+            <div class="image4">
+                <div class="clip4">
+                    <img src="" id="clip-image4">
+                </div>
+                <div class="preview4"></div>
+            </div>
+            <div class="operate4">
+                <div class="rotate4">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn4"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn4"> 向右旋转</button>
+                </div>
+                <div class="scale4">
+                    <button class="button-s fa fa-arrows" id="move-btn4"></button>
+                    <button class="button-s fa fa-search-plus" id="zoom_big_btn4"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn4"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn4"></button>
+                </div>
+                <div class="save4">
+                    <button class="button-l3 fa fa-save" id="save-btn4"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal5">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body5">
+            <div class="upload5">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn5">请选择图片</button>
+                <span class="name5"></span>
+                <input id="modal_photo5" type="file" accept="image/*">
+            </div>
+            <div class="image5">
+                <div class="clip5">
+                    <img src="" id="clip-image5">
+                </div>
+                <div class="preview5"></div>
+            </div>
+            <div class="operate5">
+                <div class="rotate5">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn5"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn5"> 向右旋转</button>
+                </div>
+                <div class="scale5">
+                    <button class="button-s fa fa-arrows" id="move-btn5"></button>
+                    <button class="button-s fa fa-search-plus" id="zoom_big_btn5"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn5"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn5"></button>
+                </div>
+                <div class="save5">
+                    <button class="button-l fa fa-save" id="save-btn5"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal6">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body6">
+            <div class="upload6">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn6">请选择图片</button>
+                <span class="name6"></span>
+                <input id="modal_photo6" type="file" accept="image/*">
+            </div>
+            <div class="image6">
+                <div class="clip6">
+                    <img src="" id="clip-image6">
+                </div>
+                <div class="preview6"></div>
+            </div>
+            <div class="operate6">
+                <div class="rotate6">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn6"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn6"> 向右旋转</button>
+                </div>
+                <div class="scale6">
+                    <button class="button-s fa fa-arrows" id="move-btn6"></button>
+                    <button class="button-s fa fa-search-plus" id="zoom_big_btn6"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn6"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn6"></button>
+                </div>
+                <div class="save6">
+                    <button class="button-l fa fa-save" id="save-btn6"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal7">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body7">
+            <div class="upload7">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn7">请选择图片</button>
+                <span class="name7"></span>
+                <input id="modal_photo7" type="file" accept="image/*">
+            </div>
+            <div class="image7">
+                <div class="clip7">
+                    <img src="" id="clip-image7">
+                </div>
+                <div class="preview7"></div>
+            </div>
+            <div class="operate7">
+                <div class="rotate7">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn7"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn7"> 向右旋转</button>
+                </div>
+                <div class="scale7">
+                    <button class="button-s fa fa-arrows" id="move-btn7"></button>
+                    <button class="button-s fa fa-search-plus" id="zoom_big_btn7"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn7"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn7"></button>
+                </div>
+                <div class="save7">
+                    <button class="button-l2 fa fa-save" id="save-btn7"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host; ?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host; ?>/static/lib/laydate/laydate.js"></script>
+<script src="<?php echo $host; ?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host; ?>/static/market/merchant/edit.js?hash=<?php echo mt_rand(10000000, 99999999); ?>"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>滚动图片 - 修改</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=592374030">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">滚动图片 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" enctype="multipart/form-data" method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <input type="hidden" id="" name="field_id[231][<?php echo $data[231]['id']; ?>]" value="<?php echo date('Y-m-d'); ?>">
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">标题</span>
+                <input type="text" name="field_id[229][<?php echo $data[229]['id']; ?>]" value="<?php echo $data[229]['field_value']; ?>" required>
+            </div>
+        </div>
+
+        <div class="image-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+
+                </div>
+                <input class="img-upload" type="file" name="field_id[230][<?php echo $data[230]['id']; ?>]" value="<?php echo $data[230]['field_value']; ?>" accept="image/*">
+                <input class="img-delete" type="hidden" name="img_delete" value="0">
+                <div class="text">图片</div>
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/yjyadv/edit.js?hash=623348021"></script>
+</body>
+</html>

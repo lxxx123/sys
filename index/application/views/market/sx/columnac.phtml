@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 -信息-栏目</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/common.css?hash=266535958"></head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <li class="active" data-parent="133"><a
+                    href="/market/sx_columnac/index/parent_id/133.html">栏目管理</a></li>
+            <li><a href="/market/sx_column_contentac/index/parent_id/133.html">信息公告</a></li>
+            <li><a href="/market/sx_userac/index/parent_id/133.html">用户审核</a></li>
+            <li><a href="/market/sx_bannerac/index/parent_id/133.html">轮播图管理</a></li>
+            <li><a href="/market/sx_often_goodsac/index/parent_id/133.html">常用商品表</a></li>
+            <li><a href="/market/sx_merchant_supplierac/index/parent_id/133.html">商户-供应商</a></li>
+            <li><a href="/market/sx_tradeac/index/parent_id/133.html">交易明细</a></li>
+            <li><a href="/market/sx_goods_managementac/index/parent_id/133.html">商品管理</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <div class="operate">
+            <div class="left">
+
+            </div>
+            <div class="right">
+                <button id="btn_add">添加</button>
+                <button id="btn_edit">修改<div class="tips">您还没有选择任何内容</div></button>
+                <button id="btn_del">删除<div class="tips">您还没有选择任何内容</div></button>
+            </div>
+        </div>
+        <div class="list">
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="check-all">
+                    </th>
+                    <th>栏目名称</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="1">
+                    </td>
+                    <td>政府文件</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="2">
+                    </td>
+                    <td>政策法规</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="3">
+                    </td>
+                    <td>行业公告</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="page-wrapper">
+            <div class="page-list"></div>
+            <div class="total">共1页</div>
+            <div class="go">去第<input type="text" id="page" value="1">页
+                <button id="sure">确定</button>
+            </div>
+        </div>
+        <!--删除确认框-->
+        <div class="confirm">
+            <div class="text">确定要删除吗？</div>
+            <div class="btn-wrapper">
+                <button id="del-confirm">确定</button>
+                <button id="del-cancel">取消</button>
+            </div>
+        </div>
+        <!--删除失败提示-->
+        <div class="toast">
+            <div class="text">删除失败!</div>
+        </div>
+    </div>
+
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/market/sx_column/index.js?hash=865560069"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>固定摊位 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=777494541">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">固定摊位 - 添加</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_add_post/add_post"  method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="eventName" name="eventName" value="tall.add">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">摊位号：</span>
+                <input type="text" name="field_id[77]" class="stall_number" placeholder="" required>
+            </div>
+            <div class="column">
+                <span class="text">面积：</span>
+                <input type="text" name="field_id[79]" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">租金：</span>
+                <input type="text" name="field_id[80]" required>
+            </div>
+            <div class="column">
+                <span class="text">楼层：</span>
+                <select  name="field_id[292]" >
+                    <option value="0" selected disabled>请选择楼层</option>
+                    <option value="-1">负一层</option>
+                    <option value="1">一层</option>
+                    <option value="2">二层</option>
+                    <option value="3">三层</option>
+                    <option value="4">四层</option>
+                    <option value="5">五层</option>
+                    <option value="6">六层</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">类别：</span>
+                <select class="form-control" name="field_id[81]" id="type_id">
+                    <option value="0" >请选择类别</option>
+                    <option value="350">副食品</option>
+                    <option value="351">豆制品</option>
+                    <option value="352">水产</option>
+                    <option value="353">其他</option>
+                    <option value="354">鲜肉</option>
+                    <option value="355">蔬菜</option>
+                    <option value="356">禽蛋</option>
+                    <option value="357">卤味</option>
+                    <option value="358">盘菜</option>
+                    <option value="359">家禽</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <span class="text">租赁情况：</span>
+                <div class="radio-item">
+                    <input id="party" type="radio" name="field_id[82]" value="1">
+                    <label for="party" class="radio-label">已租</label>
+                </div>
+                <div class="radio-item">
+                    <input id="mass" type="radio" name="field_id[82]" checked value="0">
+                    <label for="mass" class="radio-label">未租</label>
+                </div>
+            </div>
+        </div>
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script src="<?php echo $host;?>/static/market/stall/add.js?hash=143894859"></script>
+</body>
+</html>

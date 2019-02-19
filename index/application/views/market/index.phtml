@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 首页</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/index/index.css?hash=495746819">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="nav-wrapper">
+        <div class="container">
+            <div class="logo">
+                <img class="image" width="30" height="30" src="<?php echo $host;?>/static/image/title.jpg">&nbsp;&nbsp;
+                <span class="text">	<a href="/market/index/index">金沙市场</a></span>
+            </div>
+            <ul class="nav">
+                <li class="not-more"><a href="/market/guidelineac?fieldTypeId=2&typeParentId=9" data-id="1" target="iframe">市场管理</a></li>
+                <li class="not-more"><a href="/market/guidelineac?fieldTypeId=27&typeParentId=14" data-id="1" target="iframe">绩效管理</a></li>
+                <li class="not-more"><a href="/market/guidelineac?fieldTypeId=38&typeParentId=36" data-id="3" target="iframe">摊位管理</a></li>
+                <li class="not-more"><a href="/market/sx_goods_inac" data-id="4" target="iframe">安全追溯</a></li>
+                <li class="not-more"><a href="/market/guidelineac?fieldTypeId=45&typeParentId=16" data-id="5" target="iframe">信用管理</a></li>
+                <li class="not-more"><a href="/market/tradeac?fieldTypeId=109&typeParentId=17" data-id="6" target="iframe">统计分析</a></li>
+                <li class="more">
+                    <a href="javascript:void(0)">更多功能</a>
+
+                    <div class="more-list">
+                        <!--此iframe仅为了下拉框不被activex控件遮挡-->
+                        <iframe width="100%" height="100%" style="position: absolute;z-index: -999;" frameborder="0"></iframe>
+                        <div class="more-list-item">
+                            <a href="/market/guidelineac?fieldTypeId=53&typeParentId=18" data-id="7" target="iframe">物业管理</a>
+                        </div>
+                        <div class="more-list-item">
+                            <a href="/market/guidelineac?fieldTypeId=57&typeParentId=19" data-id="8" target="iframe">媒体管理</a>
+                        </div>
+                        <div class="more-list-item">
+                            <a href="/market/monitorac" data-id="9" target="iframe">监控管理</a>
+                        </div>
+                        <div class="more-list-item">
+                            <a href="/market/guidelineac?fieldTypeId=69&typeParentId=21" data-id="10" target="iframe">消防管理</a>
+                        </div>
+                        <div class="more-list-item">
+                            <a href="/market/guidelineac?fieldTypeId=73&typeParentId=22" data-id="11" target="iframe">办公管理</a>
+                        </div>
+                        <div class="more-list-item">
+                            <a href="/market/guidelineac?fieldTypeId=80&typeParentId=23" data-id="84" target="iframe">广告机管理</a>
+                        </div>
+                        <div class="more-list-item">
+                            <a href="/market/guidelineac?fieldTypeId=88&typeParentId=24" data-id="133" target="iframe">小程序管理</a>
+                        </div>
+                        <div class="more-list-item">
+                            <a href="/market/quick_merchant_priceac" data-id="147" target="iframe">快捷录入	</a>
+                        </div>
+                        <div class="more-list-item">
+                            <a href="/market/guidelineac?fieldTypeId=107&typeParentId=106" data-id="107" target="iframe">系统数据管理</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="logout">
+                <a href="/index/index/logout">退出</a>
+            </div>
+        </div>
+    </div>
+    <div class="frame-wrapper container">
+        <iframe src="/market/home" id="iframe" name="iframe" frameborder="0" width="100%"></iframe>
+    </div>
+    <div class="layer">
+        <div class="query-wrapper">
+            <div class="close-btn"></div>
+            <div class="title">更多查询</div>
+            <div class="input-wrapper">
+
+            </div>
+            <div class="btn-wrapper">
+
+            </div>
+        </div>
+    </div>
+    <!--删除确认框-->
+    <div class="confirm">
+        <div class="text">确定要删除吗？</div>
+        <div class="btn-wrapper">
+            <button id="del-confirm">确定</button>
+            <button id="del-cancel">取消</button>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+
+<script src="<?php echo $host;?>/static/market/index/index.js?hash=540396602"></script>
+</body>
+</html>

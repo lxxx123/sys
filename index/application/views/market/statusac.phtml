@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 管理制度</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/common.css?hash=833088846"></head>
+<body>
+<!--html-->
+<div id="root">
+    <?php require APPLICATION_PATH . '/application/views/nav.phtml'; ?>
+    <div class="content-wrapper">
+        <div class="operate">
+            <div class="left">
+                <span>摊位号：</span>
+                <input type="text" name="task_name" id="stall_no" value="" placeholder="输入摊位号">
+                <span>日期：</span>
+                <input type="text" id="check_date" class="date" readonly value="2019-01-01">
+                <button id="btn_search">查询</button>
+            </div>
+            <div class="right">
+                <button id="prev-btn">上一天</button>
+                <button id="today-btn">当天</button>
+                <button id="next-btn">下一天</button>
+                <!-- <button id="btn_export">导出</button>  -->
+            </div>
+        </div>
+        <div class="list">
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>商户名称</th>
+                    <th>摊位号</th>
+                    <th>秤具编号</th>
+                    <th>是否在线</th>
+                    <th>是否打票</th>
+                    <th>版本号</th>
+                    <th>日期</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>罗冬香</td>
+                    <td>LK003</td>
+                    <td>103</td>
+                    <td><span style="color: green">在线</span></td>
+                    <td><span style="color: red">否</span></td>
+                    <td>1.0.37</td>
+                    <td>2019-01-01 16:58:01</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-wrapper">
+            <div class="page-list"></div>
+            <div class="total">共1页</div>
+            <div class="go">去第<input type="text" id="page" value="1">页
+                <button id="sure">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+<script src="<?php echo $host;?>/static/market/scale_status/index.js?hash=957411964"></script></body>
+</html>

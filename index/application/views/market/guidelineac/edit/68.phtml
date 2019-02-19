@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>触摸屏图片广告 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=779881653">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">触摸屏图片广告 - 添加</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" method="post" >
+        <!--<input type="hidden" name="parent_id" value="8">
+        <input type="hidden" name="a_id" value="47">-->
+
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+        <!--证件图片行-->
+        <div class="image-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="http://img.linkunst.com/47/20181031/11492left_img810275bd94ed1545af.jpg" alt="">
+
+                </div>
+                <input class="img-upload" type="file" name="field_id[200][<?php echo $data[200]['id']; ?>]" value="<?php echo $data[200]['field_value']; ?>" accept="image/*">
+                <input class="img-delete" type="hidden" name="left_img_delete" value="0">
+                <div class="image-advice">称重界面右下角图片 建议尺寸：924*741</div>
+            </div>
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="http://img.linkunst.com/47/20181029/2853img1252565bd6819a20505.jpg" alt="">
+                </div>
+                <input class="img-upload" type="file" name="field_id[201][<?php echo $data[201]['id']; ?>]" value="<?php echo $data[201]['field_value']; ?>" accept="image/*">
+                <input class="img-delete" type="hidden" name="img1_delete" value="0">
+                <div class="image-advice">屏保界面左下角图片 建议尺寸：950*593</div>
+            </div>
+        </div>
+
+
+
+        <div class="image-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="http://img.linkunst.com/47/20181029/9365img2757385bd6819a21fb9.jpg" alt="">
+                </div>
+                <input class="img-upload" type="file"name="field_id[202][<?php echo $data[202]['id']; ?>]" value="<?php echo $data[202]['field_value']; ?>" accept="image/*">
+                <input class="img-delete" type="hidden" name="img2_delete" value="0">
+                <div class="image-advice">屏保界面左下角图片 建议尺寸：950*593</div>
+            </div>
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="http://img.linkunst.com/47/20181029/40048img3857425bd6819a23a6d.jpg" alt="">
+                </div>
+                <input class="img-upload" type="file" name="field_id[203][<?php echo $data[203]['id']; ?>]" value="<?php echo $data[203]['field_value']; ?>" accept="image/*">
+                <input class="img-delete" type="hidden" name="img3_delete" value="0">
+                <div class="image-advice">屏保界面左下角图片3 建议尺寸：950*593</div>
+            </div>
+        </div>
+
+
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/market_seting/add.js?hash=802895643"></script>
+</body>
+</html>

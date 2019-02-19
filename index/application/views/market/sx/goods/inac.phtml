@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 固定摊位</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/common.css?hash=225890282"></head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <li class="active" data-parent="4"><a
+                    href="/market/sx_goods_inac/index/parent_id/4.html">准入台账</a></li>
+            <li><a href="/market/sx_spot_checkac/index/parent_id/4.html">商品抽检</a></li>
+            <li><a href="/market/sx_check_alreadyac/index/parent_id/4.html">已抽检商品</a></li>
+            <li><a href="/market/sx_destroy_logac/index/parent_id/4.html">销毁日志</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <div class="operate">
+            <div class="left">
+                <span>日期：</span>
+                <input type="text" id="date" class="date" readonly value="2018-12-27">
+                <span>商户名称：</span>
+                <input type="text" id="stall_number" value="">
+                <button id="query_btn">查询</button>
+            </div>
+            <div class="right">
+                <button id="btn_add">添加</button>
+                <button id="btn_edit">修改<div class="tips">您还没有选择任何内容</div></button>
+                <button id="btn_del">删除<div class="tips">您还没有选择任何内容</div></button>
+            </div>
+        </div>
+        <div class="list">
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="check-all">
+                    </th>
+                    <th>商户名称</th>
+                    <th>摊位号</th>
+                    <th>商品名称</th>
+                    <th>商品重量</th>
+                    <th>商品批次</th>
+                    <th>供货公司</th>
+                    <th>进货时间</th>
+                    <th>进货小票</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="12804_2">
+                    </td>
+                    <td>林圣河</td>
+                    <td>20</td>
+                    <td>金针菇</td>
+                    <td>4 / 公斤</td>
+                    <td>18122701</td>
+                    <td>林文森</td>
+                    <td>2018-12-27</td>
+                    <td><a href="/market/sx_goods_inac/show/order_id/1588/type/2/parent_id/4.html">进货小票</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="12809_2">
+                    </td>
+                    <td>林圣河</td>
+                    <td>20</td>
+                    <td>蘑菇</td>
+                    <td>2 / 公斤</td>
+                    <td>18122701</td>
+                    <td>林文森</td>
+                    <td>2018-12-27</td>
+                    <td><a href="/market/sx_goods_inac/show/order_id/1588/type/2/parent_id/4.html">进货小票</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="12807_2">
+                    </td>
+                    <td>林圣河</td>
+                    <td>20</td>
+                    <td>笋干</td>
+                    <td>5 / 公斤</td>
+                    <td>18122701</td>
+                    <td>林文森</td>
+                    <td>2018-12-27</td>
+                    <td><a href="/market/sx_goods_inac/show/order_id/1588/type/2/parent_id/4.html">进货小票</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="12805_2">
+                    </td>
+                    <td>林圣河</td>
+                    <td>20</td>
+                    <td>冬笋</td>
+                    <td>10 / 公斤</td>
+                    <td>18122701</td>
+                    <td>林文森</td>
+                    <td>2018-12-27</td>
+                    <td><a href="/market/sx_goods_inac/show/order_id/1588/type/2/parent_id/4.html">进货小票</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="12803_2">
+                    </td>
+                    <td>林圣河</td>
+                    <td>20</td>
+                    <td>四方笋</td>
+                    <td>5 / 公斤</td>
+                    <td>18122701</td>
+                    <td>林文森</td>
+                    <td>2018-12-27</td>
+                    <td><a href="/market/sx_goods_inac/show/order_id/1588/type/2/parent_id/4.html">进货小票</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="12808_2">
+                    </td>
+                    <td>林圣河</td>
+                    <td>20</td>
+                    <td>凤尾菇</td>
+                    <td>3 / 公斤</td>
+                    <td>18122701</td>
+                    <td>林文森</td>
+                    <td>2018-12-27</td>
+                    <td><a href="/market/sx_goods_inac/show/order_id/1588/type/2/parent_id/4.html">进货小票</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="12806_2">
+                    </td>
+                    <td>林圣河</td>
+                    <td>20</td>
+                    <td>香菇</td>
+                    <td>5 / 公斤</td>
+                    <td>18122701</td>
+                    <td>林文森</td>
+                    <td>2018-12-27</td>
+                    <td><a href="/market/sx_goods_inac/show/order_id/1588/type/2/parent_id/4.html">进货小票</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="12960_2">
+                    </td>
+                    <td>官海贞</td>
+                    <td>27</td>
+                    <td>花菜</td>
+                    <td>30 / 斤</td>
+                    <td>18122701</td>
+                    <td>叶秋英</td>
+                    <td>2018-12-27</td>
+                    <td><a href="/market/sx_goods_inac/show/order_id/1605/type/2/parent_id/4.html">进货小票</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="12967_2">
+                    </td>
+                    <td>官海贞</td>
+                    <td>27</td>
+                    <td>芥兰</td>
+                    <td>2 / 斤</td>
+                    <td>18122702</td>
+                    <td>黄修晟</td>
+                    <td>2018-12-27</td>
+                    <td><a href="/market/sx_goods_inac/show/order_id/1606/type/2/parent_id/4.html">进货小票</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="12958_2">
+                    </td>
+                    <td>官海贞</td>
+                    <td>27</td>
+                    <td>蒜肉</td>
+                    <td>15 / 斤</td>
+                    <td>18122701</td>
+                    <td>叶秋英</td>
+                    <td>2018-12-27</td>
+                    <td><a href="/market/sx_goods_inac/show/order_id/1605/type/2/parent_id/4.html">进货小票</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="page-wrapper">
+            <div class="page-list"><ul class="pagination"><li class="disabled"><span>&laquo;</span></li> <li class="active"><span>1</span></li><li><a href="/market/sx_goods_inac/index/parent_id/4.html?parent_id=4&amp;page=2">2</a></li><li><a href="/market/sx_goods_inac/index/parent_id/4.html?parent_id=4&amp;page=3">3</a></li><li><a href="/market/sx_goods_inac/index/parent_id/4.html?parent_id=4&amp;page=4">4</a></li><li><a href="/market/sx_goods_inac/index/parent_id/4.html?parent_id=4&amp;page=5">5</a></li><li><a href="/market/sx_goods_inac/index/parent_id/4.html?parent_id=4&amp;page=6">6</a></li><li><a href="/market/sx_goods_inac/index/parent_id/4.html?parent_id=4&amp;page=7">7</a></li><li><a href="/market/sx_goods_inac/index/parent_id/4.html?parent_id=4&amp;page=8">8</a></li><li class="disabled"><span>...</span></li><li><a href="/market/sx_goods_inac/index/parent_id/4.html?parent_id=4&amp;page=39">39</a></li><li><a href="/market/sx_goods_inac/index/parent_id/4.html?parent_id=4&amp;page=40">40</a></li> <li><a href="/market/sx_goods_inac/index/parent_id/4.html?parent_id=4&amp;page=2">&raquo;</a></li></ul></div>
+            <div class="total">共40页</div>
+            <div class="go">去第<input type="text" id="page" value="1">页
+                <button id="sure">确定</button>
+            </div>
+        </div>
+        <!--删除确认框-->
+        <div class="confirm">
+            <div class="text">确定要删除吗？</div>
+            <div class="btn-wrapper">
+                <button id="del-confirm">确定</button>
+                <button id="del-cancel">取消</button>
+            </div>
+        </div>
+        <!--删除失败提示-->
+        <div class="toast">
+            <div class="text">删除失败!</div>
+        </div>
+    </div>
+
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+<script src="<?php echo $host;?>/static/market/sx_goods_in/index.js?hash=495890913"></script>
+</body>
+</html>

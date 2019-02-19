@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>各类视频 - 修改</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=608397453">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">各类视频 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">标题：</span>
+                <input type="text" name="field_id[235][<?php echo $data[235]['id']; ?>]" value="<?php echo $data[235]['field_value']; ?>" required>
+            </div>
+        </div>
+        <!--视频行-->
+        <div class="video-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" id="preview-photo">
+                </div>
+                <input class="img-upload" type="file" name="field_id[236][<?php echo $data[236]['id']; ?>]" value="<?php echo $data[236]['field_value']; ?>"  accept="video/mp4">
+                <div class="text">视频(mp4格式)</div>
+                <video class="video" src="http://img.linkunst.com/78/20181207/5c0a2ae35b9b7.mp4" style="display: none"></video>
+            </div>
+        </div>
+
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/yjyvideo/edit.js?hash=48128476"></script>
+</body>
+</html>

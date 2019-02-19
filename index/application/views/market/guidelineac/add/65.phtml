@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>商户价位指导 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=793768076">
+    <style>
+        #goods_name {
+            position: relative;
+        }
+
+        #search {
+            position: absolute;
+            top: 40px;
+            left: 84px;
+            display: none;
+            width: 197px;
+            min-height: 28px;
+            max-height: 200px;
+            padding-bottom: 2px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            overflow-y: auto;
+        }
+
+        #search li {
+            height: 26px;
+            margin-top: 2px;
+            padding: 0 5px;
+            line-height: 26px;
+            font-size: 14px;
+            color: #197BC0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            cursor: pointer;
+        }
+
+        #search .active {
+            background-color: #C8E3FC;
+        }
+    </style>
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">商户价位指导 - 添加</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_add_post/add_post" enctype="multipart/form-data" method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column" id="goods_name">
+                <span class="text">商品名称：</span>
+                <input type="text" name="field_id[187]" required autocomplete="off">
+                <ul id="search"></ul>
+            </div>
+            <div class="column">
+                <span class="text">商品价格：</span>
+                <input type="text" name="field_id[189]" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">商品分类：</span>
+                <select class="form-control" name="field_id[188]">
+                    <option value="132">副食品类</option>
+                    <option value="146">禽蛋类</option>
+                    <option value="199">蔬菜</option>
+                    <option value="203">水产</option>
+                    <option value="204">冷冻品</option>
+                    <option value="206">熟食</option>
+                    <option value="209">豆制品</option>
+                    <option value="211">机面</option>
+                    <option value="212">粮油</option>
+                    <option value="215">水果</option>
+                    <option value="233">其他</option>
+                    <option value="234">百货</option>
+                    <option value="235">肉类</option>
+                    <option value="236">冷鲜禽</option>
+                    <option value="241">房产类</option>
+                    <option value="250">预包装类</option>
+                    <option value="251">散装食品</option>
+                    <option value="257">餐饮服务</option>
+                    <option value="261">干品</option>
+                    <option value="262">鲜品</option>
+                </select>
+            </div>
+            <div class="column">
+                <span class="text">商品单位：</span>
+                <select class="form-control" name="field_id[338]">
+                    <option value="1">元/公斤</option>
+                    <option value="2">元/斤</option>
+                    <option value="3">元/盒</option>
+                    <option value="4">元/杯</option>
+                    <option value="5">元/瓶</option>
+                    <option value="6">元/包</option>
+                    <option value="7">元/袋</option>
+                    <option value="8">元/支</option>
+                    <option value="9">元/条</option>
+                    <option value="10">元/头</option>
+                    <option value="11">元/只</option>
+                    <option value="12">元/件</option>
+                    <option value="13">元/个</option>
+                    <option value="14">元/板</option>
+                    <option value="15">元/刀</option>
+                    <option value="16">元/把</option>
+                    <option value="17">元/碟</option>
+                    <option value="18">元/封</option>
+                    <option value="19">元/罐</option>
+                    <option value="20">元/壶</option>
+                    <option value="21">元/卷</option>
+                    <option value="22">元/块</option>
+                    <option value="23">元/双</option>
+                    <option value="24">元/坛</option>
+                    <option value="25">元/提</option>
+                    <option value="26">元/听</option>
+                    <option value="27">元/桶</option>
+                    <option value="28">元/筒</option>
+                    <option value="29">元/碗</option>
+                    <option value="30">元/组</option>
+                    <option value="31">元/kg</option>
+                    <option value="33">元/对</option>
+                    <option value="34">元/磅</option>
+                    <option value="37">元/克</option>
+                    <option value="38">元/个</option>
+                    <option value="39">元/匣</option>
+                    <option value="40">元/张</option>
+                    <option value="41">元/升</option>
+                    <option value="42">元/捆</option>
+                    <option value="43">元/篮</option>
+                    <option value="44">元/两</option>
+                    <option value="45">元/箱</option>
+                    <option value="46">元/180克</option>
+                    <option value="47">元/500g</option>
+                    <option value="48">元/盆</option>
+                    <option value="49">元/束</option>
+                    <option value="50">元/份</option>
+                    <option value="51">元/250g</option>
+                    <option value="52">元/根</option>
+                    <option value="53">元/串</option>
+                    <option value="54">元/饼</option>
+                </select>
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<script id="template" type="text/html">
+    {{each goods_list as value i}}
+    <li title="{{value}}">{{value}}</li>
+    {{/each}}
+</script>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/art-template.js"></script>
+
+<script src="<?php echo $host;?>/static/market/gudie_price/add.js?hash=190261386"></script>
+</body>
+</html>

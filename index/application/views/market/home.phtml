@@ -1,0 +1,107 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 首页</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/index/waring.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/index/home.css?hash=471517943">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="left">
+        <div class="trade info-list" style="height: 232px;">
+            <div class="info-item">
+                <div class="key"><i class="fa fa-fw fa-sticky-note-o"></i>&nbsp;&nbsp;日交易笔数：</div>
+                <div class="value"><?php echo isset($data['trade_num'])?$data['trade_num']:0; ?></div>
+            </div>
+            <div class="info-item">
+                <div class="key"><i class="fa fa-fw fa-rmb"></i>&nbsp;&nbsp;日交易金额：</div>
+                <div class="value"><?php echo isset($data['trade_money'])?$data['trade_money']:0; ?></div>
+            </div>
+            <div class="info-item">
+                <div class="key"><i class="fa fa-fw fa-bar-chart"></i>&nbsp;&nbsp;日客流量：</div>
+                <div class="value"><?php echo isset($data['visitors'])?$data['visitors']:0; ?></div>
+            </div>
+            <div class="info-item">
+                <div class="key"><i class="fa fa-fw fa-shield"></i>&nbsp;&nbsp;检测量：</div>
+                <div class="value"><?php echo isset($data['protest_num'])?$data['protest_num']:0; ?></div>
+            </div>
+            <div class="info-item">
+                <div class="key"><i class="fa fa-fw fa-book"></i>&nbsp;&nbsp;准入台账：</div>
+                <div class="value"><?php echo isset($data['goods_in_num'])?$data['goods_in_num']:0; ?></div>
+            </div>
+            <div class="info-item">
+                <div class="key"><i class="fa fa-fw fa-warning"></i>&nbsp;&nbsp;预警数：</div>
+                <div class="value"><?php echo isset($data['waring_num'])?$data['waring_num']:0; ?></div>
+            </div>
+        </div>
+        <a href="javascript:void(0)" id="trade-toggle" class="toggle" data-toggle="true">
+            <span class="text">收起</span>&nbsp;<span class="icon" style="transform: rotate(180deg);">∨</span>
+        </a>
+        <div class="todo info-list" style="height: 154px;">
+            <div class="info-item">
+                <div class="key"><i class="fa fa-fw fa-clock-o"></i>&nbsp;&nbsp;待处理事项：</div>
+                <div class="value"><?php echo isset($data['issues_num'])?$data['issues_num']:0; ?></div>
+            </div>
+            <div class="info-item">
+                <div class="key"><i class="fa fa-fw fa-exclamation-circle"></i>&nbsp;&nbsp;待处理投诉建议：</div>
+                <div class="value"><?php echo isset($data['complaint_num'])?$data['complaint_num']:0; ?></div>
+            </div>
+            <div class="info-item">
+                <div class="key"><i class="fa fa-fw fa-pencil-square-o"></i>&nbsp;&nbsp;合同到期数：</div>
+                <div class="value"><?php echo isset($data['contract_expire_num'])?$data['contract_expire_num']:0; ?></div>
+            </div>
+            <div class="info-item">
+                <div class="key"><i class="fa fa-fw fa-vcard-o"></i>&nbsp;&nbsp;证照到期数：</div>
+                <div class="value"><?php echo isset($data['vcard_expire_num'])?$data['vcard_expire_num']:0; ?></div>
+            </div>
+        </div>
+        <a href="javascript:void(0)" id="todo-toggle" class="toggle" data-toggle="true">
+            <span class="text">收起</span>&nbsp;<span class="icon" style="transform: rotate(180deg);">∨</span>
+        </a>
+        <div class="inform info-list">
+            <div class="message info-item">
+                <div class="key">
+                    <i class="fa fa-fw fa-envelope-o"></i>
+                    &nbsp;&nbsp;消息：</div>
+                <div class="value"><?php echo isset($data['message_num'])?$data['message_num']:0; ?></div>
+            </div>
+            <div class="notice info-item">
+                <div class="key">
+                    <i class="fa fa-fw fa-bullhorn"></i>
+                    &nbsp;&nbsp;通知：</div>
+                <div class="value"><?php echo isset($data['notice_num'])?$data['notice_num']:0; ?></div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div id="main" class="chart-wrapper" _echarts_instance_="1545893924132" style="background-color: rgba(0, 0, 0, 0); cursor: default;"><div style="position: relative; overflow: hidden; width: 760px; height: 280px;"><div style="position: absolute; left: 0px; top: 0px; width: 760px; height: 280px; -moz-user-select: none;" width="1520" height="560" data-zr-dom-id="bg"></div><canvas style="position: absolute; left: 0px; top: 0px; width: 760px; height: 280px; -moz-user-select: none;" width="1520" height="560" data-zr-dom-id="0"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 760px; height: 280px; -moz-user-select: none;" width="1520" height="560" data-zr-dom-id="1"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 760px; height: 280px; -moz-user-select: none;" width="1520" height="560" data-zr-dom-id="2"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 760px; height: 280px; -moz-user-select: none;" width="1520" height="560" data-zr-dom-id="3"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 760px; height: 280px; -moz-user-select: none;" width="1520" height="560" data-zr-dom-id="4"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 760px; height: 280px; -moz-user-select: none;" width="1520" height="560" data-zr-dom-id="6"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 760px; height: 280px; -moz-user-select: none;" width="1520" height="560" data-zr-dom-id="8"></canvas><canvas style="position: absolute; left: 0px; top: 0px; width: 760px; height: 280px; -moz-user-select: none;" width="1520" height="560" data-zr-dom-id="_zrender_hover_"></canvas><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; transition: left 0.4s ease 0s, top 0.4s ease 0s; background-color: rgba(0, 0, 0, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); text-decoration: none; font-family: Arial, Verdana, sans-serif; font-size: 12px; line-height: 18px; font-style: normal; font-weight: normal; padding: 5px; left: 624px; top: 206px;">27日<br>交易额 : 152,746.85<br>交易量 : 6,096</div></div></div>
+        <ul class="recommend-wrapper">
+            <li><a href="/market/guidelineac?fieldTypeId=38&typeParentId=36">待办事项</a></li>
+            <li><a href="/market/guidelineac?fieldTypeId=2&typeParentId=9">进货台账</a></li>
+            <li><a href="/market/sx_goods_inac">安全检测</a></li>
+            <li><a href="">指导价格</a></li>
+            <li><a href="">投诉建议</a></li>
+            <li><a href="">销售明细</a></li>
+            <li><a href="">秤具状况</a></li>
+            <li><a href="">商铺监控</a></li>
+            <li><a href="">商品追溯</a></li>
+            <li><a href="">巡检记录</a></li>
+        </ul>
+    </div>
+</div>
+
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/echarts-all.js"></script>
+<script src="<?php echo $host;?>/static/index/waring.js"></script>
+
+<script src="<?php echo $host;?>/static/market/index/home.js?hash=756514249"></script>
+
+</body></html>

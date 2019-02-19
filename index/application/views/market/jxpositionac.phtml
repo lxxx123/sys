@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 商品交易明细</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/common.css?hash=521983058"></head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <li class="active" data-parent="2"><a
+                    href="/market/jxpositionac/index/parent_id/2.html">位置管理</a></li>
+            <li><a href="/market/jxposition_typeac/index/parent_id/2.html">位置类别</a></li>
+            <li><a href="/market/jxtaskac/index/parent_id/2.html">任务管理</a></li>
+            <li><a href="/market/jxuserac/index/parent_id/2.html">巡查人员</a></li>
+            <li><a href="/market/jxprojac/index/parent_id/2.html">巡查项目</a></li>
+            <li><a href="/market/jxinspectac/index/parent_id/2.html">巡查管理</a></li>
+            <li><a href="/market/jxsignac/count/parent_id/2.html">人员巡查统计</a></li>
+            <li><a href="/market/jxtaskac/count/parent_id/2.html">人员绩效统计</a></li>
+            <li><a href="/market/jxmerchantac/count/parent_id/2.html">商户巡查统计</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <div class="operate">
+            <div class="left">
+                <span>摊位编号：</span>
+                <input type="text" id="infos" value="" placeholder="请输入位置名称" style="width: 250px;">
+                <button id="query_btn">查询</button>
+            </div>
+            <div class="right">
+                <button id="btn_add">添加</button>
+                <button id="btn_edit">修改<div class="tips">您还没有选择任何内容</div></button>
+                <button id="btn_del">删除<div class="tips">您还没有选择任何内容</div></button>
+                <!-- <button id="btn_export">导出</button> -->
+            </div>
+        </div>
+        <div class="list">
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="check-all">
+                    </th>
+                    <th>位置名称</th>
+                    <th>位置类别</th>
+                    <th>农贸市场</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="292">
+                    </td>
+                    <td>01a</td>
+                    <td>经营户</td>
+                    <td>金沙市场</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="291">
+                    </td>
+                    <td>01b</td>
+                    <td>经营户</td>
+                    <td>金沙市场</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="295">
+                    </td>
+                    <td>02a</td>
+                    <td>经营户</td>
+                    <td>金沙市场</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="293">
+                    </td>
+                    <td>02b</td>
+                    <td>经营户</td>
+                    <td>金沙市场</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="301">
+                    </td>
+                    <td>03a</td>
+                    <td>经营户</td>
+                    <td>金沙市场</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="299">
+                    </td>
+                    <td>03b</td>
+                    <td>经营户</td>
+                    <td>金沙市场</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="310">
+                    </td>
+                    <td>04a</td>
+                    <td>经营户</td>
+                    <td>金沙市场</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="313">
+                    </td>
+                    <td>04b</td>
+                    <td>经营户</td>
+                    <td>金沙市场</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="333">
+                    </td>
+                    <td>05a</td>
+                    <td>经营户</td>
+                    <td>金沙市场</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks" name="id" value="329">
+                    </td>
+                    <td>05b</td>
+                    <td>经营户</td>
+                    <td>金沙市场</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="page-wrapper">
+            <div class="page-list"><ul class="pagination"><li class="disabled"><span>&laquo;</span></li> <li class="active"><span>1</span></li><li><a href="/market/jxpositionac/index/parent_id/2.html?parent_id=2&amp;page=2">2</a></li><li><a href="/market/jxpositionac/index/parent_id/2.html?parent_id=2&amp;page=3">3</a></li><li><a href="/market/jxpositionac/index/parent_id/2.html?parent_id=2&amp;page=4">4</a></li><li><a href="/market/jxpositionac/index/parent_id/2.html?parent_id=2&amp;page=5">5</a></li><li><a href="/market/jxpositionac/index/parent_id/2.html?parent_id=2&amp;page=6">6</a></li><li><a href="/market/jxpositionac/index/parent_id/2.html?parent_id=2&amp;page=7">7</a></li><li><a href="/market/jxpositionac/index/parent_id/2.html?parent_id=2&amp;page=8">8</a></li><li class="disabled"><span>...</span></li><li><a href="/market/jxpositionac/index/parent_id/2.html?parent_id=2&amp;page=14">14</a></li><li><a href="/market/jxpositionac/index/parent_id/2.html?parent_id=2&amp;page=15">15</a></li> <li><a href="/market/jxpositionac/index/parent_id/2.html?parent_id=2&amp;page=2">&raquo;</a></li></ul></div>
+            <div class="total">共15页</div>
+            <div class="go">去第<input type="text" id="page" value="1">页
+                <button id="sure">确定</button>
+            </div>
+        </div>
+        <!--删除确认框-->
+        <div class="confirm">
+            <div class="text">确定要删除吗？</div>
+            <div class="btn-wrapper">
+                <button id="del-confirm">确定</button>
+                <button id="del-cancel">取消</button>
+            </div>
+        </div>
+        <!--删除失败提示-->
+        <div class="toast">
+            <div class="text">删除失败!</div>
+        </div>
+    </div>
+
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script src="<?php echo $host;?>/static/market/jxposition/index.js?hash=578713130"></script></body>
+</html>

@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>消防巡查 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=968073429">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">消防巡查 - 添加</div>
+
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_add_post/add_post" enctype="multipart/form-data" method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="eventName" name="eventName" value="tall.add">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+        <!--消防巡查-->
+        <div class="fire-row">
+            <h1>消防巡查记录表</h1>
+            <div class="date">日期：<input type="text" name="field_id[209]" id="date" value="2019-01-08" readonly/></div>
+            <table>
+                <thead>
+                <tr>
+                    <th>巡查内容</th>
+                    <th>巡查时间 <input type="checkbox" id="check-all"></th>
+                    <th>发现违章情况</th>
+                    <th>处置结果</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td rowspan="12">
+                        <p>1.用水、用电、用油、用气有无违章；</p>
+                        <p>2.疏散通道、安全出口是否畅通；</p>
+                        <p>3.常闭式防火门是否处于关闭状态、防火卷帘下是否堆放物品影响使用的情况;</p>
+                        <p>4.消防安全重点部位员工在岗在位情况;</p>
+                        <p>5.灭火器材,消防设施及消防安全标志是否在位、完好;</p>
+                        <p>6.门窗上是否设置影响逃生和灭火救援的障碍物;</p>
+                        <p>7.安全疏散指示标志、应急照明是否完好;</p>
+                        <p>8.其他消防安全情况。</p>
+                    </td>
+                    <td align="center">1时至2时 <input type="checkbox" name="chk1" class="check-one"></td>
+                    <td><textarea name="remark1"></textarea></td>
+                    <td><textarea name="result1"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">3时至4时 <input type="checkbox" name="chk3" class="check-one"></td>
+                    <td><textarea name="remark3"></textarea></td>
+                    <td><textarea name="result3"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">5时至6时 <input type="checkbox" name="chk5" class="check-one"></td>
+                    <td><textarea name="remark5"></textarea></td>
+                    <td><textarea name="result5"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">7时至8时 <input type="checkbox" name="chk7" class="check-one"></td>
+                    <td><textarea name="remark7"></textarea></td>
+                    <td><textarea name="result7"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">9时至10时 <input type="checkbox" name="chk9" class="check-one"></td>
+                    <td><textarea name="remark9"></textarea></td>
+                    <td><textarea name="result9"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">11时至12时 <input type="checkbox" name="chk11" class="check-one"></td>
+                    <td><textarea name="remark11"></textarea></td>
+                    <td><textarea name="result11"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">13时至14时 <input type="checkbox" name="chk13" class="check-one"></td>
+                    <td><textarea name="remark13"></textarea></td>
+                    <td><textarea name="result13"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">15时至16时 <input type="checkbox" name="chk15" class="check-one"></td>
+                    <td><textarea name="remark15"></textarea></td>
+                    <td><textarea name="result15"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">17时至18时 <input type="checkbox" name="chk17" class="check-one"></td>
+                    <td><textarea name="remark17"></textarea></td>
+                    <td><textarea name="result17"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">19时至20时 <input type="checkbox" name="chk19" class="check-one"></td>
+                    <td><textarea name="remark19"></textarea></td>
+                    <td><textarea name="result19"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">21时至22时 <input type="checkbox" name="chk21" class="check-one"></td>
+                    <td><textarea name="remark21"></textarea></td>
+                    <td><textarea name="result21"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="center">23时至24时 <input type="checkbox" name="chk23" class="check-one"></td>
+                    <td><textarea name="remark23"></textarea></td>
+                    <td><textarea name="result23"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="sign">
+                        <div>
+                            <input type="text" name="time1">时至<input type="text" name="time2">时
+                        </div>
+                        <div>
+                            巡查员（签字）：<input type="text" name="user1">
+                        </div>
+                        <div>
+                            主管人员（签字）：<input type="text" name="user1">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="sign">
+                        <div>
+                            <input type="text" name="time3">时至<input type="text" name="time4">时
+                        </div>
+                        <div>
+                            巡查员（签字）：<input type="text" name="user3">
+                        </div>
+                        <div>
+                            主管人员（签字）：<input type="text" name="user4">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="sign">
+                        <div>
+                            <input type="text" name="time5">时至<input type="text" name="time6">时
+                        </div>
+                        <div>
+                            巡查员（签字）：<input type="text" name="user5">
+                        </div>
+                        <div>
+                            主管人员（签字）：<input type="text" name="user6">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <p>备注：防火巡查人员应当及时纠正违章行为、妥善处置火灾危险，无法到场处置的,应当及时报告，发现初起火灾应当立即报警并及时扑救;防火巡查应当填写巡查记录，巡查人员及其主管人员应当在巡查记录上签名。</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+
+<script src="<?php echo $host;?>/static/market/fire_check/add.js?hash=417891261"></script>
+</body>
+</html>

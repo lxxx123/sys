@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 商品交易明细</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/common.css?hash=360902745">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <input type="hidden" id="marketId" value="<?php echo $marketId; ?>">
+    <input type="hidden" id="typeParentId" value="<?php echo $typeParentId; ?>">
+    <input type="hidden" id="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+
+    <?php require APPLICATION_PATH . '/application/views/nav.phtml'; ?>
+    <div class="content-wrapper">
+        <div class="operate">
+            <div class="left">
+                <span>摊位号：</span>
+                <input type="text" id="key" value="<?php echo \Linkun\Safety\Clear::escapeString($key); ?>">
+                &nbsp;
+                <span>日期：</span>
+                <input type="text" id="bill_dt1" class="date" readonly value="<?php echo $date ?>">
+                <button id="query-btn">查询</button>
+                <button id="more-btn">更多查询</button>
+            </div>
+            <div class="right">
+                <button id="prev-btn">上一天</button>
+                <button id="today-btn">当天</button>
+                <button id="next-btn">下一天</button>
+                <button id="export-btn">导出</button>
+            </div>
+        </div>
+        <div class="list">
+            <table border="1">
+                <thead>
+                <tr>
+                <th><input type="checkbox" id="check-all"></th>
+                    <?php
+                    foreach ($fieldDatas as $row) {
+                        if(!$row['show_list']){
+                            continue;
+                        }
+                        echo "<th>{$row['display_value']}</th>";
+                    }
+                    ?>
+                </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($trade_info as $key => $vo){
+                        echo '<tr>';
+                        echo "<td><input type=\"checkbox\" name=\"ids\" value=\"{$vo['id']}\"></td>";
+                        echo "<td>{$vo['trade_no']}</td>";
+                        echo "<td>{$vo['bill_dt']}</td>";
+                        echo "<td>{$vo['entity_name']}</td>";
+                        echo "<td>{$vo['stall_no']}</td>";
+                        echo "<td>{$vo['goods_name']}</td>";
+                        echo "<td>{$vo['prod_count']}/{$vo['unit']}</td>";
+                        echo "<td>{$vo['price']}</td>";
+                        echo "<td>{$vo['amount']}</td>";
+                        echo "<td>{$vo['obj_bank_no']}</td>";
+                        echo '</tr>';
+                    }
+                    
+
+                  ?>
+                </tbody>
+            </table>
+            <div style="width:100%;height: 30px;background:#E7E8EB;line-height: 30px;margin-top:30px;text-align:center"><?php echo '当天&nbsp;&nbsp;&nbsp;'.'总笔数:'.$goods_trade[0]['total_num'].'&nbsp;&nbsp;&nbsp;'.'总重量:'.$goods_trade[0]['weight_num'].'&nbsp;&nbsp;&nbsp;'.'总金额:'.$goods_trade[0]['amount_num']?></div>
+        </div>
+
+        <div class="page-wrapper">
+            <?php $pgs = ceil($total / $perpage); ?>
+            <div class="page-list">
+                <?php
+                if ($pgs > 1) {
+                    ?>
+                    <ul class="pagination">
+                        <?php
+                        if ($page > 1) {
+                            $query['page'] = abs($page - 1);
+                            $queryStr = http_build_query($query);
+                            echo "<li><a href='/market/tradeac?$queryStr'>&laquo;</a></li>";
+                        } else {
+                            echo "<li class=\"disabled\"><span>&laquo;</span></li>";
+                        }
+                        for ($i = 1; $i <=$pgs; $i++) {
+                            $class = '';
+                            if ($i == $page) {
+                                $class = 'active';
+                                echo "<li class=\"$class\"><span>{$i}</span></li>";
+                            }else{
+                                $query['page'] = $i;
+                                $queryStr = http_build_query($query);
+                                echo "<li class=\"$class\"><a href='/market/tradeac?$queryStr'>{$i}</a></li>";
+                            }
+
+                        }
+                        $query['page'] = $page + 1;
+                        if ($query['page'] <= $pgs) {
+                            $queryStr = http_build_query($query);
+                            echo "<li class=\"$class\"><a href='/market/tradeac?$queryStr'>&raquo;</a></li>";
+                        }
+                        ?>
+
+                    </ul>
+                    <?php
+                }
+                ?>
+            </div>
+            <div class="total">共<?php echo $pgs; ?>页</div>
+            <div class="go">去第<input type="text" id="page" value="<?php echo $page; ?>">页
+                <button id="sure">确定</button>
+            </div>
+        </div>
+    </div>
+    <div class="query-input">
+        <div class="row">
+            <input type="text" id="entity_name" placeholder="商户姓名：" value="">
+            <input type="text" id="bill_dt2" placeholder="交易开始时间：" value="" readonly>
+            <input type="text" id="bill_dt3" placeholder="交易结束时间：" value="" readonly>
+        </div>
+        <div class="row">
+            <input type="text" id="stall_no2" placeholder="摊位号：" value="">
+            <input type="text" id="goods_name" placeholder="商品名称：" value="">
+            <select id="obj_bank_no" style="width: 225px;height: 33px;padding: 0 12px; border: 1px solid #ddd;border-radius: 6px;font-size: 15px;color: #333;">
+                <option value="">请选择支付方式</option>
+                <option value="1" >支付宝支付</option>
+                <option value="2" >微信支付</option>
+                <option value="3" >银联支付</option>
+                <option value="4" >现金支付</option>
+                <option value="5" >会员卡支付</option>
+                <option value="6" >其他</option>
+            </select>
+
+        </div>
+        <div class="row">
+            <input type="text" id="price" placeholder="单价：" value="">
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+
+<script src="<?php echo $host;?>/static/market/trade/index.js?hash=239936794"></script>
+</body>
+</html>

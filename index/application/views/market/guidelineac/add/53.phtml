@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>租金管理 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=396286170">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">租金管理 - 添加</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_add_post/add_post"  method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <!--文字信息行-->
+
+        <div class="text-row">
+            <div class="column">
+                <span class="text">摊位号：</span>
+                <select name="field_id[149]" id="stall_id">
+                    <option value="0" selected disabled="">请选择摊位</option>
+                    <option value="3932">LK002</option>
+                    <option value="3933">LK003</option>
+                    <option value="3935">LK004</option>
+                    <option value="3936">LK005</option>
+                    <option value="3937">LK006</option>
+                    <option value="3938">LK007</option>
+                    <option value="3939">LK008</option>
+                    <option value="3940">LK009</option>
+                    <option value="3941">LK010</option>
+                    <option value="3942">LK011</option>
+                    <option value="3943">LK012</option>
+                    <option value="3944">LK013</option>
+                    <option value="3945">LK014</option>
+                    <option value="3946">LK015</option>
+                    <option value="3947">LK016</option>
+                    <option value="3948">LK017</option>
+                    <option value="3949">LK018</option>
+                    <option value="3950">LK019</option>
+                    <option value="3951">LK020</option>
+                    <option value="3952">LK021</option>
+                    <option value="3953">LK022</option>
+                    <option value="3954">LK023</option>
+                    <option value="3955">LK024</option>
+                    <option value="3956">LK025</option>
+                    <option value="3957">LK026</option>
+                    <option value="3958">LK027</option>
+                    <option value="3959">LK028</option>
+                    <option value="3960">LK029</option>
+                    <option value="3961">LK030</option>
+                    <option value="3962">LK031</option>
+                    <option value="3963">LK032</option>
+                    <option value="3964">LK033</option>
+                    <option value="3965">LK034</option>
+                    <option value="3966">LK035</option>
+                    <option value="3967">LK036</option>
+                    <option value="3968">LK037</option>
+                    <option value="3969">LK038</option>
+                    <option value="3970">LK039</option>
+                    <option value="4479">888</option>
+                </select>
+            </div>
+            <div class="column">
+                <span class="text">商户：</span>
+                <span class="merchant_name"></span>
+
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">开始日期：</span>
+                <input type="text" id="start" name="field_id[151]" required>
+            </div>
+            <div class="column">
+                <span class="text">到期日期：</span>
+                <input type="text" id="end" name="field_id[152]" required>
+            </div>
+        </div>
+
+
+        <div class="text-row">
+            <div class="column">
+                <span class="text">租金：</span>
+                <input type="text" name="field_id[150]"  required>
+            </div>
+
+        </div>
+
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+
+<script src="<?php echo $host;?>/static/market/rent_manage/add.js?hash=35471598"></script>
+</body>
+</html>

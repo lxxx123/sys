@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>人事管理 - 修改</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=886720164">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">人事管理 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <!--头像照片行-->
+        <div class="photo-row">
+            <div class="input-photo">
+                <div class="del-btn"></div>
+                <img src="<?php echo $host;?>/static/image/input-image.png" id="preview-photo">
+                <input type="hidden" name="photo_name" id="photo">
+                <input type="hidden" name="photo_delete" id="photo_delete" value="0">
+            </div>
+            <div class="label">个人照片</div>
+        </div>
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">姓名：</span>
+                <input type="text" name="field_id[8][<?php echo $data[8]['id']; ?>]" value="<?php echo $data[8]['field_value']; ?>"required>
+            </div>
+            <div class="column">
+                <span class="text">性别：</span>
+                <?php
+                if(isset($sysData['性别'])){
+                    foreach ($sysData['性别'] as $k=>$v){
+                        ?>
+                        <div class="radio-item">
+                            <input type="radio" name="field_id[9][<?php echo $data[9]['id']; ?>]" id="<?php echo $k; ?>" value="<?php echo $k; ?>" <?php echo $data[9]['field_value']==$k?'checked':''; ?> >
+                            <label for="<?php echo $k; ?>" class="radio-label"><?php echo $v; ?></label>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">民族：</span>
+                <input type="text" name="field_id[13][<?php echo $data[13]['id']; ?>]" value="<?php echo $data[13]['field_value']; ?>" required>
+            </div>
+            <div class="column">
+                <span class="text">党团关系：</span>
+                <?php
+                if(isset($sysData['党团关系'])){
+                    foreach ($sysData['党团关系'] as $k=>$v){
+                        ?>
+                        <div class="radio-item">
+                            <input type="radio" name="field_id[286][<?php echo $data[286]['id']; ?>]" id="<?php echo $k; ?>" value="<?php echo $k; ?>" <?php echo $data[286]['field_value']==$k?'checked':''; ?> >
+                            <label for="<?php echo $k; ?>" class="radio-label"><?php echo $v; ?></label>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">联系方式：</span>
+                <input type="text" name="phone" value="<?php echo $data[10]['field_value']; ?>" required>
+            </div>
+            <div class="column">
+                <span class="text">身份证号：</span>
+                <input type="text" name="id_number" value="<?php echo $data[14]['field_value']; ?>" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">职位：</span>
+                <select name="field_id[11][<?php echo $data[11]['id']; ?>]">
+                    <option value="9" >总经理</option>
+                    <option value="10" >副主任</option>
+                    <option value="11" >片长</option>
+                    <option value="12" >食品安全员</option>
+                    <option value="13" >检测员</option>
+                    <option value="14" >管理员</option>
+                    <option value="15" >保洁员</option>
+                    <option value="16" >总经理</option>
+                    <option value="17" >总助兼财务</option>
+                    <option value="18" >值班经理</option>
+                    <option value="19" >营业员</option>
+                    <option value="20" >安保</option>
+                    <option value="21" >主任</option>
+                    <option value="22" >副主任</option>
+                    <option value="23" >片长</option>
+                    <option value="24" >食品安全员</option>
+                    <option value="25" >检测员</option>
+                    <option value="26" >管理员</option>
+                    <option value="27" >管理</option>
+                    <option value="28" >主任</option>
+                    <option value="29" >副主任</option>
+                    <option value="30" >片长</option>
+                    <option value="31" >食品安全员</option>
+                    <option value="32" >检测员</option>
+                    <option value="33" >管理员</option>
+                    <option value="34" >综合管理</option>
+                    <option value="35" >招商</option>
+                    <option value="36" >水电</option>
+                    <option value="37" >招商运营</option>
+                    <option value="38" >人事行政</option>
+                    <option value="39" >市场管理</option>
+                    <option value="40" >保安管理</option>
+                    <option value="43" >总经理</option>
+                    <option value="44" >市场管理</option>
+                    <option value="45" >市场主任</option>
+                    <option value="46" >工商行政管理市场监管员</option>
+                    <option value="47" >财务</option>
+                    <option value="48" >总经理</option>
+                    <option value="49" >综合管理</option>
+                    <option value="50" >招商运营</option>
+                    <option value="51" >管理</option>
+                    <option value="52" >市场管理</option>
+                    <option value="53" >保安管理</option>
+                    <option value="54" >总经理</option>
+                    <option value="55" >市场经理</option>
+                    <option value="56" >市场主管</option>
+                    <option value="60" >经理</option>
+                    <option value="61" >管理员</option>
+                    <option value="62" >检测员</option>
+                    <option value="63" >经理</option>
+                    <option value="64" >主任</option>
+                    <option value="65" >检测员</option>
+                    <option value="66" >秩序副组长</option>
+                    <option value="67" >服务台</option>
+                    <option value="68" >副经理</option>
+                    <option value="69" >秩序组长</option>
+                    <option value="70" >信息维护</option>
+                    <option value="72" >市场管理员</option>
+                    <option value="73" >市场经理</option>
+                    <option value="74" >管理人员</option>
+                    <option value="75" >市场管理</option>
+                    <option value="76" >管理员</option>
+                    <option value="77" >市场经理</option>
+                    <option value="78" >总经理</option>
+                    <option value="79" >保洁员</option>
+                    <option value="80" >保洁员</option>
+                    <option value="81" >保洁员</option>
+                    <option value="82" >保洁员</option>
+                    <option value="83" >检测员</option>
+                    <option value="84" >董事长</option>
+                    <option value="86" >行政总监</option>
+                    <option value="87" >工程总监</option>
+                    <option value="88" >招商总监</option>
+                    <option value="89" >行政专员</option>
+                    <option value="90" >财务总监</option>
+                    <option value="91" >市场经理</option>
+                    <option value="92" >会计</option>
+                    <option value="93" >内勤</option>
+                    <option value="94" >保安</option>
+                    <option value="95" >保洁</option>
+                    <option value="98" selected>市场主管</option>
+                    <option value="99" >市场管理</option>
+                    <option value="100" >市场后勤</option>
+                    <option value="101" >市场检测</option>
+                    <option value="102" >市场保洁</option>
+                    <option value="103" >市场值班</option>
+                    <option value="105" >检测员</option>
+                    <option value="106" >市场管理</option>
+                    <option value="107" >办公室主任</option>
+                    <option value="108" >市场部经理</option>
+                    <option value="109" >市场部副经理</option>
+                    <option value="110" >设计策划部</option>
+                    <option value="111" >运营部主管</option>
+                    <option value="112" >经理</option>
+                    <option value="113" >领班</option>
+                    <option value="114" >保安</option>
+                    <option value="115" >保洁</option>
+                    <option value="116" >经理</option>
+                    <option value="117" >经理</option>
+                    <option value="118" >经理</option>
+                    <option value="119" >经理助理</option>
+                    <option value="122" >总经理</option>
+                    <option value="123" >董事长</option>
+                    <option value="124" >副总经理</option>
+                    <option value="125" >财务总监</option>
+                    <option value="128" >市场管理员</option>
+                    <option value="129" >市场监督</option>
+                    <option value="130" >消防安全员</option>
+                    <option value="131" >食品安全员</option>
+                    <option value="132" >市场策划</option>
+                    <option value="133" >水电维修</option>
+                    <option value="134" >保安队长</option>
+                    <option value="135" >保安</option>
+                    <option value="136" >保洁队长</option>
+                    <option value="137" >保洁</option>
+                    <option value="138" >巡检员</option>
+                    <option value="139" >管理员兼检测员</option>
+                    <option value="140" >站长</option>
+                    <option value="141" >中队长</option>
+                    <option value="142" >市场管理员</option>
+                    <option value="143" >管理员</option>
+                    <option value="144" >主管</option>
+                    <option value="145" >总经理</option>
+                    <option value="146" >运营主管</option>
+                    <option value="147" >主管财务</option>
+                    <option value="148" >招商经理</option>
+                    <option value="149" >文员</option>
+                    <option value="150" >保安主管</option>
+                    <option value="151" >水电维修主管</option>
+                    <option value="152" >系统管理员</option>
+                    <option value="153" >检测员</option>
+                    <option value="154" >市场经理</option>
+                    <option value="155" >总经理助理</option>
+                    <option value="156" >市场经理</option>
+                    <option value="157" >市场主管</option>
+                    <option value="158" >行政助理</option>
+                    <option value="159" >检测员</option>
+                    <option value="160" >保安主管</option>
+                    <option value="161" >保洁</option>
+                    <option value="162" >行政助理</option>
+                    <option value="163" >运营主管</option>
+                    <option value="164" >食品安全主管</option>
+                    <option value="165" >陈列指导专员</option>
+                    <option value="166" >客服指导专员</option>
+                    <option value="167" >IT主管</option>
+                    <option value="168" >保安保洁主管</option>
+                    <option value="169" >客服专员</option>
+                    <option value="170" >经理</option>
+                    <option value="171" >运营经理</option>
+                    <option value="172" >  总经理</option>
+                    <option value="173" >招商经理</option>
+                    <option value="174" >总经理</option>
+                    <option value="175" >经理</option>
+                    <option value="176" >保洁</option>
+                    <option value="177" >保安</option>
+                    <option value="178" >董事长</option>
+                    <option value="179" >总经理</option>
+                    <option value="180" >副总经理</option>
+                    <option value="181" >管理员</option>
+                    <option value="182" >水电工</option>
+                    <option value="183" >财务</option>
+                    <option value="184" >保安</option>
+                    <option value="185" >保洁</option>
+                    <option value="186" >运营经理</option>
+                    <option value="187" >运营主管</option>
+                    <option value="188" >保洁</option>
+                    <option value="189" >保安</option>
+                    <option value="190" >财务</option>
+                    <option value="191" >检测员</option>
+                    <option value="192" >市场管理员</option>
+                </select>
+            </div>
+            <div class="column">
+                <span class="text">家庭住址：</span>
+                <input type="text" name="field_id[15][<?php echo $data[15]['id']; ?>]" value="<?php echo $data[15]['field_value']; ?>" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">入职时间：</span>
+                <input id="check_in_date" type="text" name="field_id[16][<?php echo $data[16]['id']; ?>]" value="<?php echo $data[16]['field_value']; ?>" required readonly>
+            </div>
+            <div class="column">
+            </div>
+        </div>
+        <!--证件图片行-->
+        <div class="image-row">
+            <div class="column">
+                <div class="image image_id_number">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="" id="preview-id-number-photo">
+                </div>
+                <input class="img-upload" type="hidden" name="id_number_img" accept="image/*" id="id_number_delete">
+                <input class="img-delete" type="hidden" name="id_number_img_delete" value="0" id="id_number_img_delete">
+                <div class="text">身份证图片</div>
+            </div>
+            <div class="column">
+                <div class="image imgage_other_timg">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="" id="other-photo">
+                </div>
+                <input class="img-upload" type="hidden" name="other_img" accept="image/*"  id="other_delete">
+                <input class="img-delete" type="hidden" name="other_img_delete" value="0" id="other_img_delete">
+                <div class="text">其它证件图片</div>
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+    <div class="modal">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body">
+            <div class="upload">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn">请选择图片</button>
+                <span class="name"></span>
+                <input id="modal-photo" type="file" accept="image/*">
+            </div>
+            <div class="image">
+                <div class="clip">
+                    <img src="" id="clip-image">
+                </div>
+                <div class="preview"></div>
+            </div>
+            <div class="operate">
+                <div class="rotate">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn"> 向右旋转</button>
+                </div>
+                <div class="scale">
+                    <button class="button-s fa fa-arrows" id="move-btn"> </button>
+                    <button class="button-s fa fa-search-plus" id="zoom-big-btn"> </button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn"> </button>
+                    <button class="button-s fa fa-refresh" id="reset-btn"> </button>
+                </div>
+                <div class="save">
+                    <button class="button-l fa fa-save" id="save-btn"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 身份证 -->
+    <div class="modal_id_number">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body">
+            <div class="upload_id_number">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn-id-number">请选择图片</button>
+                <span class="name"></span>
+                <input id="modal-photo-id-number" type="file" accept="image/*">
+            </div>
+            <div class="image">
+                <div class="clip">
+                    <img src="" id="clip-image-id-number">
+                </div>
+                <div class="preview_id_number"></div>
+            </div>
+            <div class="operate">
+                <div class="rotate">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn"> 向右旋转</button>
+                </div>
+                <div class="scale">
+                    <button class="button-s fa fa-arrows" id="move-btn"> </button>
+                    <button class="button-s fa fa-search-plus" id="zoom-big-btn"> </button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn"> </button>
+                    <button class="button-s fa fa-refresh" id="reset-btn"> </button>
+                </div>
+                <div class="save">
+                    <button class="button-l fa fa-save" id="save-btn-id-number"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 其它证件图片 -->
+    <div class="modal_other_img">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body">
+            <div class="upload-other">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-other-btn">请选择图片</button>
+                <span class="name"></span>
+                <input id="modal-other-photo" type="file" accept="image/*">
+            </div>
+            <div class="image">
+                <div class="clip">
+                    <img src="" id="clip-image-other">
+                </div>
+                <div class="preview-other"></div>
+            </div>
+            <div class="operate">
+                <div class="rotate">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn"> 向右旋转</button>
+                </div>
+                <div class="scale">
+                    <button class="button-s fa fa-arrows" id="move-btn"> </button>
+                    <button class="button-s fa fa-search-plus" id="zoom-big-btn"> </button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn"> </button>
+                    <button class="button-s fa fa-refresh" id="reset-btn"> </button>
+                </div>
+                <div class="save">
+                    <button class="button-l fa fa-save" id="save-btn-other"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+<script src="<?php echo $host;?>/static/lib/layer/layer.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/records/edit.js?hash=644719380"></script>
+</body>
+</html>

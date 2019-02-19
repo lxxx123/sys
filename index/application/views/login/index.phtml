@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 登录</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="/static/lib/css/reset.css">
+    <link rel="stylesheet" href="/static/index/login.css">
+    <script type="text/javascript">
+        if(window != top){
+
+            top.location.href = location.href;
+        }
+    </script>
+</head>
+<!--html-->
+<body>
+<div id="root">
+    <div class="header">
+        <div class="logo"></div>
+    </div>
+    <div class="login-wrapper">
+        <div class="title">
+            <span class="text">管理系统登录</span>
+            <div class="line"></div>
+        </div>
+        <form action="" class="login-form">
+            <input type="hidden" name="market_id" required>
+<!--            <input type="text" name="market_name" class="login-input" placeholder="请选择农贸市场" readonly required>-->
+            <input type="text" name="name" class="login-input" placeholder="请输入你的账号" required>
+            <input type="password" name="password" class="login-input" placeholder="请输入你的密码" required>
+            <input type="submit" class="login-submit" value="登录">
+<!--            <input type="checkbox" name="isRemember" class="login-checkbox"><span class="checkbox-text">记住密码</span>-->
+        </form>
+        <div class="error">
+            登录失败，请核对您的登录信息！
+        </div>
+    </div>
+    <div class="footer">技术支持：杭州林鲲科技有限公司 &nbsp;&nbsp;&nbsp;支持电话：400-9919070转1</div>
+    <div class="layer">
+        <div class="select-wrapper">
+            <div class="close-btn"></div>
+            <div class="title">所在省份</div>
+            <ul class="info">
+                <li class="province active" data-type="province">请选择</li>
+                <li class="city"  data-type="city"></li>
+                <li class="area" data-type="area"></li>
+                <li class="market" data-type="market"></li>
+            </ul>
+            <ul class="select">
+
+            </ul>
+        </div>
+    </div>
+</div>
+<!--art-template模板-->
+<script id="position-list" type="text/html">
+    {{each list as item index}}
+    <li data-id="{{item.region_id}}">{{item.region_name}}</li>
+    {{/each}}
+</script>
+
+<script id="market-list" type="text/html">
+    {{each list as item index}}
+    <li data-id="{{item.id}}">{{item.market_name}}</li>
+    {{/each}}
+</script>
+<!--javascript-->
+<script src="/static/lib/js/jquery.1.11.3.js"></script>
+<script src="/static/lib/js/art-template.js"></script>
+<script src="/static/index/login.js"></script>
+</body>
+</html>

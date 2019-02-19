@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>维修管理 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=262954498">
+    <style>
+        #root {
+            overflow-x: hidden;
+        }
+
+        .text-row {
+            height: unset;
+        }
+
+        .text-row .column {
+            display: flex;
+            width: unset;
+        }
+
+        .content {
+            width: 650px;
+            height: 190px;
+            margin-top: 10px;
+            border-radius: 9px;
+            border: 1px solid #eaeaea;
+            outline: none;
+            padding: 10px;
+            font-size: 15px;
+            color: #4a4a4a;
+            font-family: initial;
+            resize: none;
+        }
+
+        .image-row {
+            margin: 50px auto auto 75px;
+        }
+    </style>
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">维修管理 - 添加</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_add_post/add_post"  method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="" name="field_id[160]" value="<?php echo date('Y-m-d'); ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">事项：</span>
+                <input type="text" name="field_id[159]" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">金额：</span>
+                <input type="text" name="field_id[161]" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">维修事由：</span>
+                <textarea name="field_id[162]" class="content"></textarea>
+            </div>
+        </div>
+        <div class="image-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="">
+                </div>
+                <input class="img-upload" type="file" name="field_id[327]" accept="image/*">
+                <div class="text">图片</div>
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script src="<?php echo $host;?>/static/market/repair/add.js?hash=769333736"></script>
+</body>
+</html>

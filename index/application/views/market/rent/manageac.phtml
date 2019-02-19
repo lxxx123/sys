@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 物业管理</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/common.css?hash=324921925"></head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <li class="active" data-pid="7"><a href="/market/rent_manageac/index/parent_id/7.html">租金管理</a></li>
+            <li><a href="/market/waterac/index/parent_id/7.html">水费管理</a></li>
+            <li><a href="/market/repairac/index/parent_id/7.html">维修管理</a></li>
+            <li><a href="/market/sx_electricac/index/parent_id/7.html">电费管理</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <div class="operate">
+            <div class="left">
+                <span>摊位号：</span>
+                <input type="text" value="" name="task_name" id="search_txt">
+                <span>日期：</span>
+                <input type="text" id="search_time" class="date" readonly value="">
+                <button id="btn_search">查询</button>
+            </div>
+            <div class="right">
+                <button id="btn_add">添加</button>
+                <button id="btn_edit">修改<div class="tips">您还没有选择任何内容</div></button>
+                <button id="btn_del">删除<div class="tips">您还没有选择任何内容</div></button>
+            </div>
+        </div>
+        <div class="list">
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="check-all">
+                    </th>
+                    <th>商户</th>
+                    <th>摊位号</th>
+                    <th>租金</th>
+                    <th>开始日期</th>
+                    <th>到期日期</th>
+                    <th>状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <!--分页-->
+        <div class="page-wrapper">
+            <div class="page-list"></div>
+            <div class="total">共0页</div>
+            <div class="go">去第<input type="text" id="page" value="1">页
+                <button id="sure">确定</button>
+            </div>
+        </div>
+        <!--删除确认框-->
+        <div class="confirm">
+            <div class="text">确定要删除吗？</div>
+            <div class="btn-wrapper">
+                <button id="del-confirm">确定</button>
+                <button id="del-cancel">取消</button>
+            </div>
+        </div>
+        <!--删除失败提示-->
+        <div class="toast">
+            <div class="text">删除失败!</div>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+<script src="<?php echo $host;?>/static/market/rent_manage/index.js?hash=871312867"></script></body>
+</html>

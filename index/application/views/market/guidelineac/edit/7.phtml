@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>商品预警 - 修改</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=679571517">
+    <style>
+        .text-row .column {
+            display: flex;
+            width: unset;
+        }
+
+        .content {
+            width: 650px;
+            height: 230px;
+            margin-top: 10px;
+            border-radius: 9px;
+            border:1px solid #eaeaea;
+            outline: none;
+            padding: 10px;
+            font-size: 15px;
+            color: #4a4a4a;
+            font-family: initial;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">商品预警 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">发布单位：</span>
+                <input type="text" name="field_id[27][<?php echo $data[27]['id']; ?>]" value="<?php echo $data[27]['field_value']; ?>" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">供货商：</span>
+                <input type="text" name="field_id[30][<?php echo $data[30]['id']; ?>]" value="<?php echo $data[30]['field_value']; ?>" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">预警类型：</span>
+                <select name="field_id[29][<?php echo $data[29]['id']; ?>]" >
+                    <option value="0"  <?php echo $data[29]['field_value']==0?'selected':''; ?> >暂不选择</option>
+                    <option value="1"   <?php echo $data[29]['field_value']==1?'selected':''; ?>   >交易预警</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="text-row">
+            <div class="column">
+                <span class="text">商品名称：</span>
+                <input type="text" name="field_id[31][<?php echo $data[31]['id']; ?>]" value="<?php echo $data[31]['field_value']; ?>" required>
+            </div>
+        </div>
+
+        <div class="text-row">
+            <div class="column">
+                <span class="text">日期：</span>
+                <input type="text" id="date" name="field_id[32][<?php echo $data[32]['id']; ?>]" value="<?php echo $data[32]['field_value']; ?>">
+            </div>
+        </div>
+
+        <div class="text-row">
+            <div class="column">
+                <span class="text">预警时间：</span>
+                <input type="text" id="war_date" name="field_id[28][<?php echo $data[28]['id']; ?>]" value="<?php echo $data[28]['field_value']; ?>">
+            </div>
+        </div>
+        <!--    <div class="text-row">
+                <div class="column">
+                    <span class="text">内容：</span>
+                    <textarea name="content" class="content"></textarea>
+                </div>
+            </div>-->
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+
+<script src="<?php echo $host;?>/static/market/goods_warning/edit.js?hash=624915907"></script>
+</body>
+</html>

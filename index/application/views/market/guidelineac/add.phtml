@@ -1,0 +1,8 @@
+<?php
+$_filePath = APPLICATION_PATH . '/application/views/market/guidelineac/add/' . $fieldTypeId . '.phtml';
+if (file_exists($_filePath)) {
+    require $_filePath;
+} else {
+    require APPLICATION_PATH . '/application/views/market/guidelineac/add/107.phtml';
+}
+?>

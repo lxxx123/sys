@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 消防管理</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/common.css?hash=357055925"></head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <li class="active" data-pid="10"><a href="/market/fire_fightingac/index/parent_id/10.html">消防设施</a></li>
+            <li><a href="/market/escapeac/index/parent_id/10.html">逃生路线</a></li>
+            <li><a href="/market/train_exchangeac/index/parent_id/10.html">消防培训</a></li>
+            <li><a href="/market/fire_checkac/index/parent_id/10.html">消防巡查</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <div class="operate">
+            <div class="left">
+                <h1 style="font-size: larger">消防设施图</h1>
+            </div>
+            <div class="right">
+                <button id="btn_edit">编辑</button>
+            </div>
+        </div>
+        <div class="chart">
+            <img src="<?php echo $host;?>/static/image/no_image.gif" style="width: 860px; height: 510px">
+            <input type="hidden" id="id" value="0">
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script src="<?php echo $host;?>/static/market/fire_fighting/index.js?hash=921562164"></script></body>
+</html>

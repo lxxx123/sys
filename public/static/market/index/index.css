@@ -1,0 +1,326 @@
+html, body {
+    height: 100%;
+}
+
+/*根*/
+#root {
+    min-width: 100%;
+    min-height: 100%;
+    padding-bottom: 22px;
+    background: #e7e8eb;
+}
+
+/*container*/
+.container {
+    width: 1082px;
+    margin: 0 auto;
+}
+
+/*导航栏*/
+.nav-wrapper {
+    width: 100%;
+    height: 63px;
+    margin-bottom: 22px;
+    background: #fdfdfd;
+}
+
+.nav-wrapper .logo {
+    float: left;
+    max-width: 260px;
+    height: 63px;
+    line-height: 63px;
+    font-size: 15px;
+    color: #36567c;
+    overflow: hidden;
+    cursor: default;
+}
+
+.nav-wrapper .logo .image {
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.nav-wrapper .nav {
+    float: left;
+    width: 750px;
+    height: 63px;
+    margin-left: 20px;
+}
+
+.nav-wrapper .nav li {
+    float: left;
+    width: 14.28%;
+    height: 100%;
+
+}
+
+.nav-wrapper .nav li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 63px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.nav-wrapper .nav li:hover>a {
+    color: #39a8f5;
+    border-bottom: 3px solid #39a8f5;
+}
+
+.nav-wrapper .nav .more:hover {
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    transition: all 0s;
+}
+
+.nav-wrapper .nav .active {
+    color: #39a8f5;
+    border-bottom: 3px solid #39a8f5;
+}
+
+/*更多功能*/
+.more {
+    position: relative;
+}
+
+.more .more-list {
+    position: absolute;
+    top: 63px;
+    left: 0;
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    overflow: hidden;
+    z-index: 99999;
+}
+
+.more .more-list .more-list-item {
+    width: 100%;
+    height: 48px;
+}
+
+.more .more-list .more-list-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 48px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.more .more-list .more-list-item a:hover {
+    background-color: #38adff;
+    border: none;
+    color: #fff;
+}
+
+/*退出*/
+.nav-wrapper .logout {
+    float: right;
+    width: 35px;
+    height: 63px;
+    line-height: 63px;
+    text-align: right;
+    font-size: 15px;
+}
+
+.nav-wrapper .logout a {
+    color: #4a4a4a;
+    transition: all .3s;
+}
+
+.nav-wrapper .logout a:hover {
+    color: #39a8f5;
+}
+
+/*frame区域背景色*/
+.frame-wrapper {
+    border: 1px solid #dedede;
+}
+
+#iframe {
+    background: #fff;
+}
+
+/*遮罩层*/
+.layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .76);
+}
+
+.layer .query-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 756px;
+    height: 330px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 6px 69px 9px rgba(60, 60, 60, .5);
+    border-radius: 6px;
+}
+
+.layer .query-wrapper .close-btn {
+    position: absolute;
+    top: 21px;
+    right: 21px;
+    width: 15px;
+    height: 15px;
+    background-image: url("/static/image/close-btn.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.layer .query-wrapper .title {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #eee;
+    line-height: 60px;
+    text-align: center;
+    font-size: 15px;
+    color: #606060;
+}
+
+.layer .query-wrapper .input-wrapper {
+    width: 100%;
+    padding: 0 18px;
+    background: #fbfbfb;
+}
+
+.layer .query-wrapper .input-wrapper .row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+.layer .query-wrapper .input-wrapper input {
+    width: 225px;
+    height: 33px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+}
+
+.layer .query-wrapper .input-wrapper input::-webkit-input-placeholder {
+    color: #999;
+}
+
+.layer .query-wrapper .input-wrapper input::-moz-placeholder {
+    color: #999;
+}
+
+.layer .query-wrapper .input-wrapper input:-moz-placeholder {
+    color: #999;
+}
+
+.layer .query-wrapper .input-wrapper input:-ms-input-placeholder {
+    color: #999;
+}
+
+.layer .query-wrapper .input-wrapper input:nth-child(2) {
+    margin: 0 24px;
+}
+
+.layer .query-wrapper .btn-wrapper {
+    width: 100%;
+    height: 94px;
+    padding: 39px 0 0 27px;
+    background: #fbfbfb;
+    border-bottom: 1px solid #eee;
+}
+
+.layer .query-wrapper .btn-wrapper button {
+    width: 126px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+#query-btn {
+    background: #38adff;
+    font-size: 15px;
+    color: #fff;
+}
+
+#reset-btn {
+    margin-left: 14px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+/*删除确认框*/
+.confirm {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 183px;
+    height: 111px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 9px;
+    box-shadow: 0 9px 12px rgba(0, 0, 0, .08);
+}
+
+.confirm .text {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.confirm .btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.confirm .btn-wrapper button {
+    width: 57px;
+    height: 30px;
+    margin: 0 6px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    line-height: 30px;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.confirm #del-confirm {
+    background: #288df0;
+}
+
+.confirm #del-cancel {
+    background: #cccccc;
+}

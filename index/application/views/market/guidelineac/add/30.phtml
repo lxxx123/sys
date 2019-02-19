@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>巡查人员 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=688698111">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">巡查人员 - 添加</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_add_post/add_post"  method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">账号：</span>
+                <input type="text" name="field_id[53]" required value="">
+            </div>
+            <div class="column">
+                <span class="text">姓名：</span>
+                <input type="text" name="field_id[54]" required value="">
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">密码：</span>
+                <input type="password" name="field_id[55]" required value="">
+            </div>
+            <div class="column">
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text" style="width:400px">选择位置：<input type="checkbox" class="check-all">全选</span>
+            </div>
+        </div>
+
+        <div style="margin-left:140px;width: 80%; column-count: 5; column-gap: 3px;" id="goods_div">
+            <div style="height:30px"><input class="pos_check" type="checkbox" value="91" >noo1</div>
+            <div style="height:30px"><input class="pos_check" type="checkbox" value="92" >noo2</div>
+            <div style="height:30px"><input class="pos_check" type="checkbox" value="93" >noo3</div>
+            <div style="height:30px"><input class="pos_check" type="checkbox" value="94" >noo4</div>
+            <div style="height:30px"><input class="pos_check" type="checkbox" value="95" >noo9</div>
+            <div style="height:30px"><input class="pos_check" type="checkbox" value="141" >n112</div>
+            <div style="height:30px"><input class="pos_check" type="checkbox" value="151" >n101</div>
+            <div style="height:30px"><input class="pos_check" type="checkbox" value="152" >n102</div>
+            <div style="height:30px"><input class="pos_check" type="checkbox" value="153" >0113</div>
+            <div style="height:30px"><input class="pos_check" type="checkbox" value="154" >2114</div>
+        </div>
+
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="button" style="width: 150px;height: 42px;background-color: #38adff;border: none;border-radius: 3px;line-height: 42px;font-size: 15px;color: #fff;cursor: pointer;" id="to_submit" value="提交">
+        </div>
+    </form>
+
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script src="<?php echo $host;?>/static/market/jxuser/add.js?hash=953308091"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+html, body {
+    height: 100%;
+}
+
+/*根*/
+#root {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 1280px;
+    min-height: 720px;
+    background-image: url("/static/image/login-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/*顶部*/
+.header {
+    height: 112px;
+    border-bottom: 2px solid rgba(195, 214, 255, .2);
+}
+
+.header .logo {
+    width: 420px;
+    height: 100%;
+    margin-left: 35px;
+    background-image: url("/static/image/logo.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+/*登录框*/
+.login-wrapper {
+    position: absolute;
+    top: -100px;
+    bottom: 0;
+    right: 207px;
+    width: 352px;
+    height: 422px;
+    margin: auto 0;
+    background: #fcfcfd;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+}
+
+.login-wrapper .title {
+    height: 64px;
+    border-bottom: 2px solid #e7e6e7;
+    text-align: center;
+}
+
+.login-wrapper .title .text {
+    display: inline-block;
+    height: 58px;
+    line-height: 58px;
+    font-size: 18px;
+    color: #38a8f6;
+}
+
+.login-wrapper .title .line {
+    width: 160px;
+    height: 4px;
+    margin: 0 auto;
+    border-top: 3px solid #39a8f5;
+    border-bottom: 1px solid #9bd2f9;
+}
+
+.login-wrapper .login-form {
+    padding: 32px 30px 0 30px;
+}
+
+.login-wrapper .login-input {
+    display: block;
+    width: 100%;
+    height: 46px;
+    margin-bottom: 22px;
+    padding: 0 20px;
+    background: #f6f6f6;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    line-height: 46px;
+    font-size: 16px;
+}
+
+/*修改placeholder颜色*/
+.login-wrapper .login-input::-webkit-input-placeholder {
+    color: #a7a7a7;
+}
+
+.login-wrapper .login-input::-moz-placeholder {
+    color: #a7a7a7;
+}
+
+.login-wrapper .login-input:-moz-placeholder {
+    color: #a7a7a7;
+}
+
+.login-wrapper .login-input:-ms-input-placeholder {
+    color: #a7a7a7;
+}
+
+.login-wrapper input[name='market_name'] {
+    background-image: url("/static/image/login-select.png");
+    background-position: 93.5% center;
+    background-repeat: no-repeat;
+
+}
+
+.login-wrapper .login-submit {
+    display: block;
+    width: 100%;
+    height: 46px;
+    margin-bottom: 20px;
+    background: #39a8f5;
+    border-radius: 6px;
+    line-height: 46px;
+    letter-spacing: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #f5f4f2;
+    cursor: pointer;
+}
+
+.login-wrapper .login-checkbox {
+    vertical-align: top;
+    width: 15px;
+    height: 15px;
+    margin-right: 9px;
+}
+
+.login-wrapper .checkbox-text {
+    vertical-align: top;
+    font-size: 15px;
+    color: #a7a7a7;
+}
+
+.login-wrapper .error {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 232px;
+    height: 52px;
+    margin: auto;
+    background: rgba(0, 0, 0, .86);
+    border-radius: 6px;
+    line-height: 52px;
+    text-align: center;
+    font-size: 14px;
+    color: #e3e3e3;
+}
+
+/*底部*/
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    background: #e7e8eb;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: #6A6A6C;
+}
+
+/*遮罩层*/
+.layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .76);
+}
+
+.layer .select-wrapper {
+    position: absolute;
+    top: -130px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 659px;
+    height: 456px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+}
+
+.layer .select-wrapper .close-btn {
+    position: absolute;
+    top: 21px;
+    right: 21px;
+    width: 15px;
+    height: 15px;
+    background-image: url("/static/image/close-btn.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.layer .select-wrapper .title {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 15px;
+    color: #9b9b9b;
+}
+
+.layer .select-wrapper .info {
+    display: flex;
+    height: 36px;
+}
+
+.layer .select-wrapper .info li {
+    width: 25%;
+    height: 100%;
+    line-height: 33px;
+    text-align: center;
+    font-size: 15px;
+    color: #747474;
+    cursor: pointer;
+}
+
+.layer .select-wrapper .info .active {
+    border-bottom: 3px solid #39a8f5;
+    color: #39a8f5;
+}
+
+.layer .select-wrapper .select {
+    height: 370px;
+    border-top: 2px solid #e8e7e8;
+    overflow-y: scroll;
+}
+
+.layer .select-wrapper .select li {
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 30px;
+    line-height: 30px;
+    text-align: left;
+    font-size: 15px;
+    color: #747474;
+    cursor: pointer;
+}
+
+.layer .select-wrapper .select li:hover {
+    background: #efefef;
+}

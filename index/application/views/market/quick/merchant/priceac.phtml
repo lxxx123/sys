@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 快捷商户菜价</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/common.css?hash=727525510"><style type="text/css">
+        .market_name {
+            font-size: 15px;
+            margin: 30px 0 0 30px;
+        }
+
+        .market {
+            height: 30px;
+            border: 2px solid #AAAAAA;
+        }
+
+        .hr {
+            margin: 20px 0 0 0;
+            border: 2px solid #AAAAAA;
+        }
+
+        .content {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-top: 0px;
+        }
+
+        .content span {
+            margin: 10px 0 20px 10%;
+            font-size: 16px;
+        }
+
+        .content textarea {
+            padding: 10px;
+            width: 60%;
+            margin-left: 10%;
+            border-radius: 8px;
+        }
+
+        .content button {
+            width: 130px;
+            height: 40px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #ebb683;
+            letter-spacing: 4px;
+            font-size: 16px;
+            margin: 30px 0 0 10%;
+        }
+    </style>
+</head>
+<body>
+
+<!--html-->
+<div id="root">
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <li class="active" data-parent="147"><a
+                    href="/market/quick_merchant_priceac/index/parent_id/147.html">商户菜价快捷录入</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <span>菜品录入</span>
+            <textarea cols="150" rows="10" class="btn_info" style="border:2px solid #B6B4B6"
+                      placeholder="例如：白菜-20|西瓜-30"></textarea>
+            <span>商户录入</span>
+            <textarea cols="150" rows="10" class="btn_info1" style="border:2px solid #B6B4B6"
+                      placeholder="例如：张龙|李名"></textarea>
+            <button class="btn1">提交</button>
+        </div>
+    </div>
+
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        // 获取市场id
+        // 商户录入
+        $('.btn1').click(function () {
+            var text = $(".btn_info").val();
+            var texts = $(".btn_info1").val();
+
+            if (text.length == 0) {
+                return false;
+            }
+            if (texts.length == 0) {
+                return false;
+            }
+            $.post("/market/quick_merchant_priceac/add.html", {
+                txt: text,
+                txts: texts,
+            }, function (data) {
+                // alert(data);
+                // console.log(data);
+                if (data == 1) {
+                    $(".btn_info").val('');
+                    $(".btn_info1").val('');
+                    alert("添加完成");
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

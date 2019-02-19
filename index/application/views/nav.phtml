@@ -1,0 +1,17 @@
+<div class="nav-wrapper">
+    <ul class="nav">
+        <?php
+        foreach ($childMenus as $row){
+            $active = '';
+            if($fieldTypeId==$row['id']){
+                $active = 'active';
+            }
+            if($row['url']){
+                echo "<li class=\"$active\" data-pid=\"{$row['id']}\"><a href=\"{$row['url']}?fieldTypeId={$row['id']}&typeParentId={$typeParentId}\">{$row['type_name']}</a></li>";
+            }else{
+                echo "<li class=\"$active\" data-pid=\"{$row['id']}\"><a href=\"/market/guidelineac?fieldTypeId={$row['id']}&typeParentId={$typeParentId}\">{$row['type_name']}</a></li>";
+            }
+        }
+        ?>
+    </ul>
+</div>

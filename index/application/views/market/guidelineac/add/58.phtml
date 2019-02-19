@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>媒体信息 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=616010289">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">添加</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_add_post/add_post" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="" name="field_id[337]" value="<?php echo date('Y-m-d'); ?>">
+
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">类别：</span>
+                <select name="field_id[331]" >
+                    <option value="9" >行业规范</option>
+                    <option value="10" disabled >市场动态</option>
+                    <option value="11" >|--领导关怀</option>
+                    <option value="16" >|--通知公告</option>
+                    <option value="13" disabled >市场介绍</option>
+                    <option value="14" >|--市场简介</option>
+                    <option value="18" >|--管理制度</option>
+                    <option value="30" >|--市场荣誉</option>
+                    <option value="23" disabled >科普农贸</option>
+                    <option value="25" >|--健康饮食</option>
+                    <option value="26" >|--生活窍门</option>
+                    <option value="33" disabled >服务指南</option>
+                    <option value="34" >|--街道服务</option>
+                    <option value="35" >|--家政服务</option>
+                </select>
+            </div>
+            <div class="column">
+                <span class="text">标题：</span>
+                <input type="text" name="field_id[332]" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">摘要：</span>
+                <input type="text" name="field_id[333]" required>
+            </div>
+            <div class="column">
+                <span class="text">是否推荐：</span>
+                <div class="radio-item">
+                    <input type="radio" name="recommended" id="male" value="1" checked>
+                    <label for="male" class="radio-label">是</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="recommended" id="female" value="0">
+                    <label for="female" class="radio-label">否</label>
+                </div>
+            </div>
+        </div>
+        <!--富文本编辑行-->
+        <div class="article-row">
+            <script type="text/plain" id="myEditor" name="field_id[334]" style="width:100%;height:300px;"></script>
+        </div>
+
+        <!--证件图片行-->
+        <div class="image-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="">
+                </div>
+                <input class="img-upload" type="file" name="field_id[335]" accept="image/*">
+                <div class="text">缩略图</div>
+            </div>
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="">
+                </div>
+                <input class="img-upload" type="file" name="field_id[336]" accept="image/*">
+                <div class="text">滚动大图</div>
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+    <div class="modal">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body">
+            <div class="upload">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn">请选择图片</button>
+                <span class="name"></span>
+                <input id="modal-photo" type="file" accept="image/*">
+            </div>
+            <div class="image">
+                <div class="clip">
+                    <img src="" id="clip-image">
+                </div>
+                <div class="preview"></div>
+            </div>
+            <div class="operate">
+                <div class="rotate">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn"> 向右旋转</button>
+                </div>
+                <div class="scale">
+                    <button class="button-s fa fa-arrows" id="move-btn"> </button>
+                    <button class="button-s fa fa-search-plus" id="zoom-big-btn"> </button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn"> </button>
+                    <button class="button-s fa fa-refresh" id="reset-btn"> </button>
+                </div>
+                <div class="save">
+                    <button class="button-l fa fa-save" id="save-btn"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script type="text/javascript" src="<?php echo $host;?>/static/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="<?php echo $host;?>/static/lib/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="<?php echo $host;?>/static/lib/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/screen_infos/add.js?hash=293252806"></script>
+</body>
+</html>

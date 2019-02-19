@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>位置管理 - 修改</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=46999001">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">位置管理 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">位置名称：</span>
+                <input type="text" name="field_id[41][<?php echo $data[41]['id']; ?>]" value="<?php echo $data[41]['field_value']; ?>" required >
+            </div>
+            <div class="column">
+                <span class="text">类别：</span>
+                <select class="form-control" name="field_id[42][<?php echo $data[42]['id']; ?>]">
+                    <option value="15"  selected >经营户</option>
+                    <option value="16" >消防设备</option>
+                    <option value="17" >公共保洁区</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">摊位号：</span>
+                <select class="form-control" name="field_id[290][<?php echo $data[290]['id']; ?>]" >
+                    <option value="0" >无</option>
+                    <option value="3931" >LK001号摊位</option>
+                    <option value="3932" >LK002号摊位</option>
+                    <option value="3933" >LK003号摊位</option>
+                    <option value="3935" >LK004号摊位</option>
+                    <option value="3936" >LK005号摊位</option>
+                    <option value="3937" >LK006号摊位</option>
+                    <option value="3938" >LK007号摊位</option>
+                    <option value="3939" >LK008号摊位</option>
+                    <option value="3940" >LK009号摊位</option>
+                    <option value="3941" >LK010号摊位</option>
+                    <option value="3942" >LK011号摊位</option>
+                    <option value="3943" >LK012号摊位</option>
+                    <option value="3944" >LK013号摊位</option>
+                    <option value="3945" >LK014号摊位</option>
+                    <option value="3946" >LK015号摊位</option>
+                    <option value="3947" >LK016号摊位</option>
+                    <option value="3948" >LK017号摊位</option>
+                    <option value="3949" >LK018号摊位</option>
+                    <option value="3950" >LK019号摊位</option>
+                    <option value="3951" >LK020号摊位</option>
+                    <option value="3952" >LK021号摊位</option>
+                    <option value="3953" >LK022号摊位</option>
+                    <option value="3954" >LK023号摊位</option>
+                    <option value="3955" >LK024号摊位</option>
+                    <option value="3956" >LK025号摊位</option>
+                    <option value="3957" >LK026号摊位</option>
+                    <option value="3958" >LK027号摊位</option>
+                    <option value="3959" >LK028号摊位</option>
+                    <option value="3960" >LK029号摊位</option>
+                    <option value="3961" >LK030号摊位</option>
+                    <option value="3962" >LK031号摊位</option>
+                    <option value="3963" >LK032号摊位</option>
+                    <option value="3964" >LK033号摊位</option>
+                    <option value="3965" >LK034号摊位</option>
+                    <option value="3966" >LK035号摊位</option>
+                    <option value="3967" >LK036号摊位</option>
+                    <option value="3968" >LK037号摊位</option>
+                    <option value="3969" >LK038号摊位</option>
+                    <option value="3970" >LK039号摊位</option>
+                    <option value="3971" >LK040号摊位</option>
+                    <option value="4479"  selected >888号摊位</option>
+                </select>
+            </div>
+            <div class="column">
+                <span class="text">RFID编号：</span>
+                <input type="text" name="field_id[291][<?php echo $data[291]['id']; ?>]"  value="<?php echo $data[291]['field_value']; ?>">
+            </div>
+        </div>
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script src="<?php echo $host;?>/static/market/jxposition/edit.js?hash=976755287"></script>
+</body>
+</html>

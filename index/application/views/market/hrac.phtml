@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 管理制度</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/common.css?hash=146079176"></head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <li class="active" data-pid="11"><a href="/market/hrac/index/parent_id/11.html">人力资源</a></li>
+            <li><a href="/market/attendanceac/index/parent_id/11.html">出勤管理</a></li>
+            <li><a href="/market/educationac/index/parent_id/11.html">教育管理</a></li>
+            <li><a href="/market/document_archivesac/index/parent_id/11.html">公文档案</a></li>
+            <li><a href="/market/information_deliveryac/index/parent_id/11.html">信息发布</a></li>
+            <li><a href="/market/information_exchangeac/index/parent_id/11.html">信息交流</a></li>
+            <li><a href="/market/backlogac/index/parent_id/11.html">待办事项</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <div class="operate">
+            <div class="left">
+                <span>姓名：</span>
+                <input type="text" name="task_name" id="search_txt" value="">
+                <button id="btn_search">查询</button>
+            </div>
+            <div class="right">
+                <button id="btn_add">添加</button>
+                <button id="btn_edit">修改<div class="tips">您还没有选择任何内容</div></button>
+                <button id="btn_del">删除<div class="tips">您还没有选择任何内容</div></button>
+                <button id="btn_export">导出</button>
+            </div>
+        </div>
+        <div class="list">
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="check-all">
+                    </th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>详情</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="checkbox" value="" name="ids"></td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td><a href="" class="fa fa-search"></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-wrapper">
+            <div class="page-list">1</div>
+            <div class="total">共1页</div>
+            <div class="go">去第<input type="text" id="page" value="1">页
+                <button id="sure">确定</button>
+            </div>
+        </div>
+        <!--删除确认框-->
+        <div class="confirm">
+            <div class="text">确定要删除吗？</div>
+            <div class="btn-wrapper">
+                <button id="del-confirm">确定</button>
+                <button id="del-cancel">取消</button>
+            </div>
+        </div>
+        <!--删除失败提示-->
+        <div class="toast">
+            <div class="text">删除失败!</div>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+
+<script src="<?php echo $host;?>/static/market/hr/index.js?hash=25198919"></script></body>
+</html>

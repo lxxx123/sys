@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>人事管理 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/pic-size.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=872085804">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">人事管理 - 添加</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_add_post/add_post" method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <!--头像照片行-->
+        <div class="photo-row">
+            <div class="input-photo">
+                <div class="del-btn"></div>
+                <img src="<?php echo $host;?>/static/image/input-image.png" id="preview-photo">
+                <input type="hidden" name="photo" id="photo">
+            </div>
+            <div class="label">个人照片(小于1M)</div>
+        </div>
+
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">姓名：</span>
+                <input type="text" name="field_id[8]" required>
+            </div>
+            <div class="column">
+                <span class="text">性别：</span>
+                <?php
+                if(isset($sysData['性别'])){
+                    foreach ($sysData['性别'] as $k=>$v){
+                        ?>
+                        <div class="radio-item">
+                            <input type="radio" name="field_id[9]" id="<?php echo $k; ?>" value="<?php echo $k; ?>">
+                            <label for="<?php echo $k; ?>" class="radio-label"><?php echo $v; ?></label>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">民族：</span>
+                <input type="text" name="field_id[13]" required>
+            </div>
+            <div class="column">
+                <span class="text">党团关系：</span>
+                <?php
+                if(isset($sysData['党团关系'])){
+                    foreach ($sysData['党团关系'] as $k=>$v){
+                        ?>
+                        <div class="radio-item">
+                            <input type="radio" name="field_id[286]" id="<?php echo $k; ?>" value="<?php echo $k; ?>">
+                            <label for="<?php echo $k; ?>" class="radio-label"><?php echo $v; ?></label>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">联系方式：</span>
+                <input type="text" name="field_id[10]" required>
+            </div>
+            <div class="column">
+                <span class="text">身份证号：</span>
+                <input type="text" name="field_id[14]" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">职位：</span>
+                <select name="field_id[11]">
+                    <option value="98">市场主管</option>
+                    <option value="138">巡检员</option>
+                </select>
+            </div>
+            <div class="column">
+                <span class="text">家庭住址：</span>
+                <input type="text" name="field_id[15]" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">入职时间：</span>
+                <input id="check_in_date" type="text" name="field_id[16]" required readonly>
+            </div>
+            <div class="column">
+            </div>
+        </div>
+        <!--证件图片行-->
+        <div class="image-row">
+            <div class="column">
+                <div class="image image_id_number">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" id="preview-id-number-photo">
+                </div>
+                <input class="img-upload" type="hidden" name="field_id[17]" accept="image/*" id="id_number_photo">
+                <div class="text">身份证图片(小于1M)</div>
+            </div>
+            <div class="column">
+                <div class="image imgage_other_timg">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="" id="other-photo">
+                </div>
+                <input class="img-upload" type="hidden" name="field_id[18]" accept="image/*" id="other_img_photo">
+                <div class="text">其它证件图片(小于1M)</div>
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+    <!-- 头像 -->
+    <div class="modal">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body">
+            <div class="upload">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn">请选择图片</button>
+                <span class="name"></span>
+                <input id="modal-photo" type="file" accept="image/*">
+            </div>
+            <div class="image">
+                <div class="clip">
+                    <img src="" id="clip-image">
+                </div>
+                <div class="preview"></div>
+            </div>
+            <div class="operate">
+                <div class="rotate">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn"> 向右旋转</button>
+                </div>
+                <div class="scale">
+
+                    <button class="button-s fa fa-search-plus" id="zoom-big-btn"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn"></button>
+                </div>
+                <div class="save">
+                    <button class="button-l fa fa-save" id="save-btn"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 身份证 -->
+    <div class="modal_id_number">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body">
+            <div class="upload_id_number">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn-id-number">请选择图片</button>
+                <span class="name"></span>
+                <input id="modal-photo-id-number" type="file" accept="image/*">
+            </div>
+            <div class="image">
+                <div class="clip">
+                    <img src="" id="clip-image-id-number">
+                </div>
+                <div class="preview_id_number"></div>
+            </div>
+            <div class="operate">
+                <div class="rotate">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn1"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btns"> 向右旋转</button>
+                </div>
+                <div class="scale">
+
+                    <button class="button-s fa fa-search-plus" id="zoom-big-btn1"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn1"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn1"></button>
+                </div>
+                <div class="save">
+                    <button class="button-l fa fa-save" id="save-btn-id-number"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 其它证件图片 -->
+    <div class="modal_other_img">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body">
+            <div class="upload-other">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-other-btn">请选择图片</button>
+                <span class="name"></span>
+                <input id="modal-other-photo" type="file" accept="image/*">
+            </div>
+            <div class="image">
+                <div class="clip">
+                    <img src="" id="clip-image-other">
+                </div>
+                <div class="preview-other"></div>
+            </div>
+            <div class="operate">
+                <div class="rotate">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn3"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn3"> 向右旋转</button>
+                </div>
+                <div class="scale">
+
+                    <button class="button-s fa fa-search-plus" id="zoom-big-btn3"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn3"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn3"></button>
+                </div>
+                <div class="save">
+                    <button class="button-l fa fa-save" id="save-btn-other"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--     <div class="pic_size">
+        <button class="del_pic">关闭</button>
+        <div class="pic_title">
+        图片太大,请按照要求上传图片！
+        </div>
+        </div> -->
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+<script src="<?php echo $host;?>/static/lib/layer/layer.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/records/add.js?hash=713006491"></script>
+</body>
+</html>

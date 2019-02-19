@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>合同管理 - 修改</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=601008291">
+    <style>
+        .text-row .column {
+            width: 330px;
+        }
+
+        .text-row .column .text {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">合同管理 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+
+        <!--文字信息行-->
+
+        <div class="text-row">
+            <div class="column">
+                <span class="text">商户名称：</span>
+                <select name="field_id[92][<?php echo $data[92]['id']; ?>]"  id="merchant_ids">
+                    <option value="" >请选择商户</option>
+                    <option value="3898" >舒榴花</option>
+                    <option value="3899" >钱云财</option>
+                    <option value="3900" >罗冬香</option>
+                    <option value="3902" >军军</option>
+                    <option value="3903" >李玉红</option>
+                    <option value="3904" >朱爱香</option>
+                    <option value="3905" >姜四娜</option>
+                    <option value="3906" >叶炎林</option>
+                    <option value="3907" >郑雪兰</option>
+                    <option value="3908" >吴建仁</option>
+                    <option value="3909" >徐爱成</option>
+                    <option value="3910" >徐裕泉</option>
+                    <option value="3911" >张宝珠</option>
+                    <option value="3912" >龚石头</option>
+                    <option value="3913" >朱小洪</option>
+                    <option value="3914" >杨小琴</option>
+                    <option value="3915" >周金英</option>
+                    <option value="3916" >汪昌昌</option>
+                    <option value="3917" >金建明</option>
+                    <option value="3918" >江国云</option>
+                    <option value="3919" >徐银姣</option>
+                    <option value="3920" >翁伟城</option>
+                    <option value="3921" >方菊花</option>
+                    <option value="3922" >吴银仙</option>
+                    <option value="3923" >盛爱珍</option>
+                    <option value="3924" >叶红花</option>
+                    <option value="3925" >周雪英</option>
+                    <option value="3926" >李佩英</option>
+                    <option value="3927" >黄秀芬</option>
+                    <option value="3928" >王荣仙</option>
+                    <option value="3929" >徐耀香</option>
+                    <option value="3930" >丰洪文</option>
+                    <option value="3931" >祝曾月</option>
+                    <option value="3932" >苏小利</option>
+                    <option value="3933" >彭桂英</option>
+                    <option value="3934" >郑金福</option>
+                    <option value="3935" >徐远进</option>
+                    <option value="3936" >池漳树娜</option>
+                    <option value="4449" >张可思</option>
+                    <option value="6892" >测试</option>
+                </select>
+            </div>
+            <div class="column">
+                <span class="text">摊位号：</span>
+                <span class="text" id="stall_number"><?php echo $data[93]['field_value']; ?></span>
+                <input type="hidden" name="field_id[93][<?php echo $data[93]['id']; ?>]" id="stall_ids" value="<?php echo $data[93]['field_value']; ?>">
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">合同金额：</span>
+                <input type="text" name="field_id[310][<?php echo $data[310]['id']; ?>]" value="<?php echo $data[310]['field_value']; ?>">
+            </div>
+            <div class="column">
+                <span class="text">支付方式：</span>
+                <select name="field_id[311][<?php echo $data[311]['id']; ?>]">
+                    <option value="1" <?php echo $data[311]['field_value']==1?'selected':''; ?> >未收</option>
+                    <option value="2" <?php echo $data[311]['field_value']==2?'selected':''; ?>>现金</option>
+                    <option value="3" <?php echo $data[311]['field_value']==3?'selected':''; ?>>支付宝</option>
+                    <option value="4" <?php echo $data[311]['field_value']==4?'selected':''; ?>>微信</option>
+                    <option value="5" <?php echo $data[311]['field_value']==5?'selected':''; ?>>银联</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">开始时间：</span>
+                <input id="start_time" type="text" name="field_id[312][<?php echo $data[312]['id']; ?>]" value="<?php echo $data[312]['field_value']; ?>" required readonly>
+            </div>
+            <div class="column">
+                <span class="text">到期时间：</span>
+                <input id="end_time" type="text" name="field_id[313][<?php echo $data[313]['id']; ?>]" value="<?php echo $data[313]['field_value']; ?>" required readonly>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">租金：</span>
+                <input type="text" name="field_id[95][<?php echo $data[95]['id']; ?>]" value="<?php echo $data[95]['field_value']; ?>" >
+            </div>
+            <div class="column">
+                <span class="text">支付方式：</span>
+                <select name="field_id[314][<?php echo $data[314]['id']; ?>]">
+                    <option value="1" <?php echo $data[314]['field_value']==1?'selected':''; ?> >未收</option>
+                    <option value="2" <?php echo $data[314]['field_value']==2?'selected':''; ?>>现金</option>
+                    <option value="3" <?php echo $data[314]['field_value']==3?'selected':''; ?>>支付宝</option>
+                    <option value="4" <?php echo $data[314]['field_value']==4?'selected':''; ?>>微信</option>
+                    <option value="5" <?php echo $data[314]['field_value']==5?'selected':''; ?>>银联</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">开始时间：</span>
+
+                <input id="payment_start_time" type="text" name="field_id[315][<?php echo $data[315]['id']; ?>]" value="<?php echo $data[315]['field_value']; ?>" readonly>
+            </div>
+            <div class="column">
+                <span class="text">结束时间：</span>
+                <input id="payment_end_time" type="text" name="field_id[316][<?php echo $data[316]['id']; ?>]" value="<?php echo $data[316]['field_value']; ?>" readonly>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">物业费：</span>
+                <input type="text" name="field_id[98][<?php echo $data[98]['id']; ?>]" value="<?php echo $data[98]['field_value']; ?>">
+            </div>
+            <div class="column">
+                <span class="text">支付方式：</span>
+                <select name="field_id[317][<?php echo $data[317]['id']; ?>]">
+                    <option value="1" <?php echo $data[317]['field_value']==1?'selected':''; ?> >未收</option>
+                    <option value="2" <?php echo $data[317]['field_value']==2?'selected':''; ?>>现金</option>
+                    <option value="3" <?php echo $data[317]['field_value']==3?'selected':''; ?>>支付宝</option>
+                    <option value="4" <?php echo $data[317]['field_value']==4?'selected':''; ?>>微信</option>
+                    <option value="5" <?php echo $data[317]['field_value']==5?'selected':''; ?>>银联</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">开始时间：</span>
+
+                <input id="property_start_time" type="text" name="field_id[318][<?php echo $data[318]['id']; ?>]" value="<?php echo $data[318]['field_value']; ?>" required readonly>
+            </div>
+            <div class="column">
+                <span class="text">结束时间：</span>
+                <input id="property_end_time" type="text" name="field_id[319][<?php echo $data[319]['id']; ?>]" value="<?php echo $data[319]['field_value']; ?>" required readonly>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">保证金：</span>
+                <input type="text" name="field_id[320][<?php echo $data[320]['id']; ?>]" value="<?php echo $data[320]['field_value']; ?>" >
+            </div>
+            <div class="column">
+                <span class="text">支付方式：</span>
+                <select name="field_id[321][<?php echo $data[321]['id']; ?>]">
+                    <option value="1" <?php echo $data[321]['field_value']==1?'selected':''; ?> >未收</option>
+                    <option value="2" <?php echo $data[321]['field_value']==2?'selected':''; ?>>现金</option>
+                    <option value="3" <?php echo $data[321]['field_value']==3?'selected':''; ?>>支付宝</option>
+                    <option value="4" <?php echo $data[321]['field_value']==4?'selected':''; ?>>微信</option>
+                    <option value="5" <?php echo $data[321]['field_value']==5?'selected':''; ?>>银联</option>
+                </select>
+            </div>
+        </div>
+
+        <!--证件图片行-->
+        <div class="image-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="">
+                </div>
+                <input class="img-upload" type="file" name="field_id[322][<?php echo $data[322]['id']; ?>]" value="<?php echo $data[322]['field_value']; ?>" accept="image/*">
+                <div class="text">合同图片</div>
+            </div>
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="">
+                </div>
+                <input class="img-upload" type="file" name="field_id[323][<?php echo $data[323]['id']; ?>]" value="<?php echo $data[323]['field_value']; ?>" accept="image/*">
+                <div class="text">其它证件图片</div>
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+    <div class="modal">
+        <div class="close-btn"></div>
+        <div class="header">上传图片</div>
+        <div class="body">
+            <div class="upload">
+                <span class="text">图片上传</span>
+                <button class="button-m" id="select-photo-btn">请选择图片</button>
+                <span class="name"></span>
+                <input id="modal-photo" type="file" accept="image/*">
+            </div>
+            <div class="image">
+                <div class="clip">
+                    <img src="" id="clip-image">
+                </div>
+                <div class="preview"></div>
+            </div>
+            <div class="operate">
+                <div class="rotate">
+                    <button class="button-m fa fa-undo" id="rotate-left-btn"> 向左旋转</button>
+                    <button class="button-m fa fa-repeat" id="rotate-right-btn"> 向右旋转</button>
+                </div>
+                <div class="scale">
+                    <button class="button-s fa fa-arrows" id="move-btn"></button>
+                    <button class="button-s fa fa-search-plus" id="zoom-big-btn"></button>
+                    <button class="button-s fa fa-search-minus" id="zoom-small-btn"></button>
+                    <button class="button-s fa fa-refresh" id="reset-btn"></button>
+                </div>
+                <div class="save">
+                    <button class="button-l fa fa-save" id="save-btn"> 保存修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/contract/add.js?hash=782794077"></script>
+</body>
+</html>

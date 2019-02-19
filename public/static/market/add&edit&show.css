@@ -1,0 +1,2007 @@
+/*根*/
+#root {
+    position: relative;
+}
+
+/*返回按钮*/
+.back-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+/*标题*/
+.title {
+    width: 100%;
+    height: 48px;
+    border-bottom: 1px solid #e2e2e2;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+    color: #4a4a4a;
+}
+
+/*表单*/
+form {
+    position: relative;
+    min-height: 720px;
+    padding-bottom: 152px;
+}
+
+/*头像*/
+
+form .label {
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.photo-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 190px;
+    margin-bottom: 67px;
+}
+ /*删除失败提示*/
+.check {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 183px;
+    height: 111px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 9px;
+    box-shadow: 0 9px 12px rgba(0, 0, 0, .08);
+}
+
+.check .text {
+    height: 111px;
+    line-height: 111px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+.photo-row .input-photo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin: 30px 0 16px 0;
+    background: #eaeaea;
+    /*background-image: url('/static/image/input-image.png');*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.photo-row .input-photo .del-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url("/static/image/close-btn3.png");
+    border-radius: 50%;
+    z-index: 99999;
+}
+
+.input-photo #preview-photo {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+/*输入框*/
+.text-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    margin: 20px 0;
+    padding: 0 150px;
+}
+
+.text-row .column {
+    width: 285px;
+    height: 100%;
+    line-height: 40px;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.text-row .column .text {
+    display: inline-block;
+    width: 80px;
+}
+
+.text-row .column .text, .text-row .column label, .text-row .column input, .text-row .column option {
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.text-row .column input[type='text'],.text-row .column input[type='password'], .text-row .column select {
+    width: 198px;
+    height: 39px;
+    padding: 0 10px;
+    border: 1px solid #eaeaea;
+    border-radius: 9px;
+    outline: none;
+}
+
+.text-row .column input[type='text']:focus,.text-row .column input[type='password']:focus, .text-row .column select:focus {
+    border: 2px solid rgb(155, 189, 244);
+}
+
+.text-row .column .radio-item {
+    display: inline-block;
+    width: 70px;
+}
+
+.text-row .column .radio-item:first-of-type {
+    margin-right: 50px;
+}
+
+.text-row .column input[type='radio'] {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.text-row .column .radio-label {
+    position: relative;
+    cursor: pointer;
+}
+
+.text-row .column .radio-label::after {
+    position: absolute;
+    top: 0px;
+    left: -34px;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #eaeaea;
+}
+
+.text-row .column input:checked + label::after {
+    background: #4a90e2;
+}
+
+/*图片*/
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 260px;
+    margin: 50px 0;
+    padding: 0 150px;
+}
+
+.image-row .column {
+    width: 357px;
+    height: 256px;
+}
+
+.image-row .column .image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+}
+
+.image-row .column .image .del-btn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url("/static/image/close-btn3.png");
+    border-radius: 50%;
+    z-index: 99999;
+}
+
+.image-row .column .image img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.image-row input[type='file'] {
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+.image-row .column .text {
+    margin-top: 23px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+/*视频*/
+.video-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 260px;
+    margin: 50px 0;
+    padding: 0 150px;
+}
+
+.video-row .column {
+    width: 357px;
+    height: 256px;
+}
+
+.video-row .column .image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+}
+
+.video-row .column .image .del-btn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url("/static/image/close-btn3.png");
+    border-radius: 50%;
+    z-index: 99999;
+}
+
+.video-row .column .image img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.video-row input[type='file'] {
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+.video-row .column .text {
+    margin-top: 23px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+/*富文本*/
+.article-row {
+    margin: 50px 0;
+    padding: 0 150px;
+}
+
+/*文件导入*/
+.import-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 156px;
+    padding-top: 66px;
+}
+
+.import-row .upload {
+    display: flex;
+    align-items: center;
+    width: 390px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.import-row .upload .text {
+    margin-right: 27px;
+}
+
+.import-row .upload .btn-import {
+    position: relative;
+    display: flex;
+    width: 330px;
+    height: 50px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.import-row .upload .btn-import .left {
+    width: 100px;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    line-height: 46px;
+    text-align: center;
+}
+
+.import-row .upload .btn-import .right {
+    width: 230px;
+    height: 100%;
+    padding-left: 10px;
+    line-height: 46px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.import-row .upload .btn-import input[type='file'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.import-row .download {
+    width: 390px;
+    padding-left: 77px;
+}
+
+.import-row .download a {
+    font-size: 15px;
+    color: #38adff;
+}
+
+/*消防巡查表格*/
+.fire-row {
+    padding: 0 50px;
+}
+
+.fire-row h1 {
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: #aaa;
+}
+
+.fire-row .date {
+    margin: 10px;
+    text-align: right;
+    font-size: 15px;
+    color: #aaa;
+}
+
+.fire-row table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fire-row table, .fire-row tr, .fire-row th, .fire-row td {
+    border: 1px solid #ccc;
+}
+
+.fire-row th {
+    width: 25%;
+    height: 36px;
+    line-height: 36px;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.fire-row td {
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    color: #4a4a4a;
+    overflow: hidden;
+}
+
+.fire-row .sign div {
+    display: inline-block;
+    width: 33%;
+    height: 100%;
+    text-align: center;
+}
+
+.fire-row .sign div input[type='text'] {
+    width: 120px;
+    height: 30px;
+    padding:0 10px;
+    border-bottom: 1px solid #000;
+    outline: none;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.fire-row p {
+    line-height: 30px;
+    text-indent: 2em;
+}
+
+.fire-row input[type='checkbox'] {
+    vertical-align: middle;
+}
+
+.fire-row textarea {
+    width: 100%;
+    height: 100%;
+    padding:0 10px;
+    resize: none;
+    border: none;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+/*商户菜品行*/
+
+.goods-row{
+    margin-top: 20px;
+    padding: 0 50px;
+}
+
+.goods-row .merchant{
+    margin: 10px 0;
+    font-size: 15px;
+    color: #777;
+}
+
+.goods-row table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.goods-row table, .goods-row tr, .goods-row th, .goods-row td {
+    height: 30px;
+    border: 1px solid #ccc;
+    line-height: 30px;
+}
+
+.goods-row th {
+    width: 20%;
+    line-height: 30px;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.goods-row td {
+    width: 20%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+    overflow: hidden;
+}
+
+.goods-row td input,.goods-row td select{
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    text-align: center !important;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.goods-row td button{
+    width: 50px;
+    height: 25px;
+    border: none;
+    border-radius: 3px;
+    background: #38adff;
+    line-height: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/*分隔线*/
+.line-row {
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+    height: 0;
+    border-top: 2px solid #f6f6f6;
+}
+
+/*提交*/
+.button-row {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+}
+
+.button-row input[type='submit'] {
+    width: 150px;
+    height: 42px;
+    background-color: #38adff;
+    border: none;
+    border-radius: 3px;
+    line-height: 42px;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*模态框*/
+.modal {
+    position: fixed;
+    top: 100px;
+    left: calc((100% - 900px) / 2);
+    display: none;
+    width: 900px;
+    height: 587px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 99999;
+}
+
+.modal .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+.modal .header {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal .body {
+    padding: 16px 32px;
+}
+
+.modal .body button {
+    height: 35px;
+    background: #288df0;
+    border: none;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal .body .button-s {
+    width: 38px;
+}
+
+.modal .body .button-m {
+    width: 96px;
+}
+
+.modal .body .button-l {
+    width: 187px;
+}
+
+.modal .body .upload .text {
+    margin-right: 45px;
+    font-size: 14px;
+}
+
+.modal .body .upload .name {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+#modal-photo {
+    display: none;
+}
+
+.modal .image {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 364px;
+    margin-top: 20px;
+}
+
+.modal .image .clip {
+    width: 621px;
+    height: 364px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    background-color: #fcfcfc;
+}
+
+.modal .image .preview {
+    width: 184px;
+    height: 184px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal .image .preview:hover {
+    border: 1px solid rgb(204, 204, 255);
+    box-shadow: 0 0 5px #ccc;
+}
+
+.modal .operate {
+    display: flex;
+    margin-top: 30px;
+}
+
+.modal .scale {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+
+/*toast提示框*/
+.toast {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 183px;
+    height: 111px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 9px;
+    box-shadow: 0 9px 12px rgba(0, 0, 0, .08);
+}
+
+.toast .text {
+    height: 111px;
+    line-height: 111px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+/*toast提示框*/
+.toasts {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 183px;
+    height: 111px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 9px;
+    box-shadow: 0 9px 12px rgba(0, 0, 0, .08);
+}
+
+.toasts .text {
+    height: 111px;
+    line-height: 111px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+/*-----------------------------------------------*/
+  .image-row .column .input-photo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+
+}
+/*模态框*/
+.modal1 {
+    position: fixed;
+    top: 700px;
+    left: calc((100% - 900px) / 2);
+    display: none;
+    width: 900px;
+    height: 587px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 99999;
+}
+
+.modal1 .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+.modal1 .header {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal1 .body1 {
+    padding: 16px 32px;
+}
+
+.modal1 .body1 button {
+    height: 35px;
+    background: #288df0;
+    border: none;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal1 .body1 .button-ss {
+    width: 38px;
+}
+
+.modal1 .body1 .button-ms {
+    width: 96px;
+}
+
+.modal1 .body1 .button-l1s {
+    width: 187px;
+}
+
+.modal1 .body1 .upload1 .text {
+    margin-right: 45px;
+    font-size: 14px;
+}
+
+.modal1 .body1 .upload1 .name1 {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+#modal_photo1 {
+    display: none;
+}
+
+.modal1 .image1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 364px;
+    margin-top: 20px;
+}
+
+.modal1 .image1 .clip1 {
+    width: 621px;
+    height: 364px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    background-color: #fcfcfc;
+}
+
+.modal1 .image1 .preview1 {
+    width: 184px;
+    height: 184px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal1 .image1 .preview1:hover {
+    border: 1px solid rgb(204, 204, 255);
+    box-shadow: 0 0 5px #ccc;
+}
+
+.modal1 .operate1 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.modal1 .scale1 {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+.modal1 .scale1 {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+ .input-photo .del-btn1 {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/image/close-btn3.png);
+    border-radius: 50%;
+    z-index: 99999;
+}
+/*-----------------------------------------------*/
+  .image-row .column .input-photo2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+
+}
+/*模态框*/
+.modal2 {
+    position: fixed;
+    top: 1000px;
+    left: calc((100% - 900px) / 2);
+    display: none;
+    width: 900px;
+    height: 587px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 99999;
+}
+
+.modal2 .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+.modal2 .header {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal2 .body2 {
+    padding: 16px 32px;
+}
+
+.modal2 .body2 button {
+    height: 35px;
+    background: #288df0;
+    border: none;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal2 .body2 .button-ss {
+    width: 38px;
+}
+
+.modal2 .body2 .button-ms {
+    width: 96px;
+}
+
+.modal2 .body2 .button-l1s {
+    width: 187px;
+}
+
+.modal2 .body2 .upload2 .text {
+    margin-right: 45px;
+    font-size: 14px;
+}
+
+.modal2 .body2 .upload2 .name2 {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+#modal_photo2 {
+    display: none;
+}
+
+.modal2 .image2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 364px;
+    margin-top: 20px;
+}
+
+.modal2 .image2 .clip2 {
+    width: 621px;
+    height: 364px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    background-color: #fcfcfc;
+}
+
+.modal2 .image2 .preview2 {
+    width: 184px;
+    height: 184px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal2 .image2 .preview2:hover {
+    border: 1px solid rgb(204, 204, 255);
+    box-shadow: 0 0 5px #ccc;
+}
+
+.modal2 .operate2 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.modal2 .scale2{
+    margin-left: 257px;
+    margin-right: 27px;
+}
+.modal2 .scale2 {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+ .input-photo2 .del-btn2 {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/image/close-btn3.png);
+    border-radius: 50%;
+    z-index: 99999;
+}
+/*--------------------------*/
+  .image-row .column .input-photo3{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+
+}
+/*模态框*/
+.modal3 {
+    position: fixed;
+    top: 700px;
+    left: calc((100% - 900px) / 2);
+    display: none;
+    width: 900px;
+    height: 587px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 99999;
+}
+
+.modal3 .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+.modal3 .header {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal3 .body3 {
+    padding: 16px 32px;
+}
+
+.modal3 .body3 button {
+    height: 35px;
+    background: #288df0;
+    border: none;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal3 .body3 .button-ss {
+    width: 38px;
+}
+
+.modal3 .body3 .button-ms {
+    width: 96px;
+}
+
+.modal3 .body3 .button-l1s {
+    width: 187px;
+}
+
+.modal3 .body3 .upload3 .text {
+    margin-right: 45px;
+    font-size: 14px;
+}
+
+.modal3 .body3 .upload3 .name3 {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+#modal_photo3 {
+    display: none;
+}
+
+.modal3 .image3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 364px;
+    margin-top: 20px;
+}
+
+.modal3 .image3 .clip3 {
+    width: 621px;
+    height: 364px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    background-color: #fcfcfc;
+}
+
+.modal3 .image3 .preview3 {
+    width: 184px;
+    height: 184px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal3 .image3 .preview3:hover {
+    border: 1px solid rgb(204, 204, 255);
+    box-shadow: 0 0 5px #ccc;
+}
+
+.modal3 .operate3 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.modal3 .scale3{
+    margin-left: 257px;
+    margin-right: 27px;
+}
+.modal3 .scale3 {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+ .input-photo3 .del-btn3 {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/image/close-btn3.png);
+    border-radius: 50%;
+    z-index: 99999;
+}
+/*--------------------------*/
+  .image-row .column .input-photo4{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+
+}
+/*模态框*/
+.modal4 {
+    position: fixed;
+    top: 700px;
+    left: calc((100% - 900px) / 2);
+    display: none;
+    width: 900px;
+    height: 587px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 99999;
+}
+
+.modal4 .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+.modal4 .header {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal4 .body4 {
+    padding: 16px 32px;
+}
+
+.modal4 .body4 button {
+    height: 35px;
+    background: #288df0;
+    border: none;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal4 .body4 .button-ss {
+    width: 38px;
+}
+
+.modal4 .body4 .button-ms {
+    width: 96px;
+}
+
+.modal4 .body4 .button-l1s {
+    width: 187px;
+}
+
+.modal4 .body4 .upload4 .text {
+    margin-right: 45px;
+    font-size: 14px;
+}
+
+.modal4 .body4 .upload4 .name4 {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+#modal_photo4 {
+    display: none;
+}
+
+.modal4 .image4 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 364px;
+    margin-top: 20px;
+}
+
+.modal4 .image4 .clip4 {
+    width: 621px;
+    height: 364px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    background-color: #fcfcfc;
+}
+
+.modal4 .image4 .preview4 {
+    width: 184px;
+    height: 184px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal4 .image4 .preview4:hover {
+    border: 1px solid rgb(204, 204, 255);
+    box-shadow: 0 0 5px #ccc;
+}
+
+.modal4 .operate4 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.modal4 .scale4{
+    margin-left: 257px;
+    margin-right: 27px;
+}
+.modal4 .scale4 {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+ .input-photo4 .del-btn4 {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/image/close-btn3.png);
+    border-radius: 50%;
+    z-index: 99999;
+}
+/*--------------------------*/
+  .image-row .column .input-photo5{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+
+}
+/*模态框*/
+.modal5 {
+    position: fixed;
+    top: 700px;
+    left: calc((100% - 900px) / 2);
+    display: none;
+    width: 900px;
+    height: 587px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 99999;
+}
+
+.modal5 .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+.modal5 .header {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal5 .body5 {
+    padding: 16px 32px;
+}
+
+.modal5 .body5 button {
+    height: 35px;
+    background: #288df0;
+    border: none;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal5 .body5 .button-ss {
+    width: 38px;
+}
+
+.modal5 .body5 .button-ms {
+    width: 96px;
+}
+
+.modal5 .body5 .button-l1s {
+    width: 187px;
+}
+
+.modal5 .body5 .upload5 .text {
+    margin-right: 45px;
+    font-size: 14px;
+}
+
+.modal5 .body5 .upload5 .name5 {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+#modal_photo5 {
+    display: none;
+}
+
+.modal5 .image5 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 364px;
+    margin-top: 20px;
+}
+
+.modal5 .image5 .clip5 {
+    width: 621px;
+    height: 364px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    background-color: #fcfcfc;
+}
+
+.modal5 .image5 .preview5 {
+    width: 184px;
+    height: 184px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal5 .image5 .preview5:hover {
+    border: 1px solid rgb(204, 204, 255);
+    box-shadow: 0 0 5px #ccc;
+}
+
+.modal5 .operate5 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.modal5 .scale5{
+    margin-left: 257px;
+    margin-right: 27px;
+}
+.modal5 .scale5 {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+ .input-photo5 .del-btn5 {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/image/close-btn3.png);
+    border-radius: 50%;
+    z-index: 99999;
+}
+/*--------------------------*/
+  .image-row .column .input-photo6{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+
+}
+/*模态框*/
+.modal6 {
+    position: fixed;
+    top: 1000px;
+    left: calc((100% - 900px) / 2);
+    display: none;
+    width: 900px;
+    height: 587px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 99999;
+}
+
+.modal6 .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+.modal6 .header {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal6 .body6 {
+    padding: 16px 32px;
+}
+
+.modal6 .body6 button {
+    height: 35px;
+    background: #288df0;
+    border: none;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal6 .body6 .button-ss {
+    width: 38px;
+}
+
+.modal6 .body6 .button-ms {
+    width: 96px;
+}
+
+.modal6 .body6 .button-l1s {
+    width: 187px;
+}
+
+.modal6 .body6 .upload6 .text {
+    margin-right: 45px;
+    font-size: 14px;
+}
+
+.modal6 .body6 .upload6 .name6 {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+#modal_photo6 {
+    display: none;
+}
+
+.modal6 .image6 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 364px;
+    margin-top: 20px;
+}
+
+.modal6 .image6 .clip6 {
+    width: 621px;
+    height: 364px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    background-color: #fcfcfc;
+}
+
+.modal6 .image6 .preview6 {
+    width: 184px;
+    height: 184px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal6 .image6 .preview6:hover {
+    border: 1px solid rgb(204, 204, 255);
+    box-shadow: 0 0 5px #ccc;
+}
+
+.modal6 .operate6 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.modal6 .scale6{
+    margin-left: 257px;
+    margin-right: 27px;
+}
+.modal6 .scale6 {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+ .input-photo6 .del-btn6 {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/image/close-btn3.png);
+    border-radius: 50%;
+    z-index: 99999;
+}
+/*-------------------*/
+ .image-row .column .image_id_number{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+
+}
+/*模态框*/
+.modal_id_number {
+    position: fixed;
+    top: 300px;
+    left: calc((100% - 900px) / 2);
+    display: none;
+    width: 900px;
+    height: 587px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 99999;
+}
+
+.modal_id_number .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+.modal_id_number .header {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal_id_number .body {
+    padding: 16px 32px;
+}
+
+.modal_id_number .body button {
+    height: 35px;
+    background: #288df0;
+    border: none;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal_id_number .body .button-s {
+    width: 38px;
+}
+
+.modal_id_number .body .button-m {
+    width: 96px;
+}
+
+.modal_id_number .body .button-l1 {
+    width: 187px;
+}
+
+.modal_id_number .body .upload_id_number .text {
+    margin-right: 45px;
+    font-size: 14px;
+}
+
+.modal_id_number .body .upload_id_number .name {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+#modal-photo-id-number {
+    display: none;
+}
+
+.modal_id_number .image {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 364px;
+    margin-top: 20px;
+}
+
+.modal_id_number .image .clip {
+    width: 621px;
+    height: 364px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    background-color: #fcfcfc;
+}
+
+.modal_id_number .image .preview_id_number {
+    width: 184px;
+    height: 184px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal_id_number .image .preview_id_number:hover {
+    border: 1px solid rgb(204, 204, 255);
+    box-shadow: 0 0 5px #ccc;
+}
+
+.modal_id_number .operate {
+    display: flex;
+    margin-top: 30px;
+}
+
+.modal_id_number .scale{
+    margin-left: 257px;
+    margin-right: 27px;
+}
+.modal_id_number .scale {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+ .image_id_number .del-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/image/close-btn3.png);
+    border-radius: 50%;
+    z-index: 99999;
+}
+/*-----------------------*/
+.image-row .column .image_id_number{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+
+}
+/*模态框*/
+.modal_other_img {
+    position: fixed;
+    top: 300px;
+    left: calc((100% - 900px) / 2);
+    display: none;
+    width: 900px;
+    height: 587px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 99999;
+}
+
+.modal_other_img .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+.modal_other_img .header {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal_other_img .body {
+    padding: 16px 32px;
+}
+
+.modal_other_img .body button {
+    height: 35px;
+    background: #288df0;
+    border: none;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal_other_img .body .button-s {
+    width: 38px;
+}
+
+.modal_other_img .body .button-m {
+    width: 96px;
+}
+
+.modal_other_img .body .button-l1 {
+    width: 187px;
+}
+
+.modal_other_img .body .upload-other .text {
+    margin-right: 45px;
+    font-size: 14px;
+}
+
+.modal_other_img .body .upload-other .name {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+#modal-other-photo {
+    display: none;
+}
+
+.modal_other_img .image {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 364px;
+    margin-top: 20px;
+}
+
+.modal_other_img .image .clip {
+    width: 621px;
+    height: 364px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    background-color: #fcfcfc;
+}
+
+.modal_other_img .image .preview-other {
+    width: 184px;
+    height: 184px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal_other_img .image .preview-other:hover {
+    border: 1px solid rgb(204, 204, 255);
+    box-shadow: 0 0 5px #ccc;
+}
+
+.modal_other_img .operate {
+    display: flex;
+    margin-top: 30px;
+}
+
+.modal_other_img .scale{
+    margin-left: 257px;
+    margin-right: 27px;
+}
+.modal_other_img .scale {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+ .imgage_other_timg .del-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/image/close-btn3.png);
+    border-radius: 50%;
+    z-index: 99999;
+}
+/*-----------------------------------------------*/
+  .image-row .column .input-photo7{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 213px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+
+}
+/*模态框*/
+.modal7 {
+    position: fixed;
+    top: 1000px;
+    left: calc((100% - 900px) / 2);
+    display: none;
+    width: 900px;
+    height: 587px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 99999;
+}
+
+.modal7 .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    width: 21px;
+    height: 21px;
+    background-image: url('/static/image/close-btn2.png');
+    cursor: pointer;
+}
+
+.modal7 .header {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal7 .body7 {
+    padding: 16px 32px;
+}
+
+.modal7 .body7 button {
+    height: 35px;
+    background: #288df0;
+    border: none;
+    border-radius: 4px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal7 .body7 .button-ss {
+    width: 38px;
+}
+
+.modal7 .body7 .button-ms {
+    width: 96px;
+}
+
+.modal7 .body7 .button-l1s {
+    width: 187px;
+}
+
+.modal7 .body7 .upload7 .text {
+    margin-right: 45px;
+    font-size: 14px;
+}
+
+.modal7 .body7 .upload7 .name7 {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+#modal_photo7 {
+    display: none;
+}
+
+.modal7 .image7 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 364px;
+    margin-top: 20px;
+}
+
+.modal7 .image7 .clip7 {
+    width: 621px;
+    height: 364px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    background-color: #fcfcfc;
+}
+
+.modal7 .image7 .preview7 {
+    width: 184px;
+    height: 184px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal7 .image7 .preview7:hover {
+    border: 1px solid rgb(204, 204, 255);
+    box-shadow: 0 0 5px #ccc;
+}
+
+.modal7 .operate7 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.modal7 .scale7{
+    margin-left: 257px;
+    margin-right: 27px;
+}
+.modal7 .scale7 {
+    margin-left: 257px;
+    margin-right: 27px;
+}
+ .input-photo7 .del-btn7 {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/image/close-btn3.png);
+    border-radius: 50%;
+    z-index: 99999;
+}

@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>公告信息 - 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=104559029">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">公告信息 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">标题：</span>
+                <input type="text" name="field_id[247][<?php echo $data[247]['id']; ?>]" value="<?php echo $data[247]['field_value']; ?>" required>
+            </div>
+            <div class="column">
+                <span class="text">新闻时间：</span>
+                <input type="text" name="field_id[248][<?php echo $data[248]['id']; ?>]" class="date" id="date-start" readonly value="<?php echo $data[248]['field_value']; ?>">
+            </div>
+
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">主题栏目：</span>
+                <select name="column_id" >
+                    <option value="1" >政府文件</option>
+                    <option value="2" selected>政策法规</option>
+                    <option value="3" >行业公告</option>
+                </select>
+            </div>
+            <div class="column">
+            </div>
+        </div>
+        <!--富文本编辑行-->
+        <div class="article-row">
+            <script type="text/plain" id="myEditor" name="field_id[6][<?php echo $data[249]['article_id']; ?>]" style="width:100%;height:300px;"><?php echo $data[249]['field_value']; ?></script>
+        </div>
+
+        <div class="image-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="">
+                </div>
+                <input class="img-upload" type="file" name="field_id[304][<?php echo $data[355]['id']; ?>]"
+                       value="<?php echo $data[355]['field_value']; ?>" accept="image/*">
+                <input class="img-delete" type="hidden" name="thumb_delete" value="0">
+                <div class="text">缩略图</div>
+            </div>
+        </div>            <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script type="text/javascript" src="<?php echo $host;?>/static/lib/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="<?php echo $host;?>/static/lib/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="<?php echo $host;?>/static/lib/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+
+<script src="<?php echo $host;?>/static/market/sx_column_content/edit.js?hash=628839719"></script>
+</body>
+<script>
+
+    //初始化富文本编辑器
+    var ue = UE.getEditor('myEditor')
+
+
+
+    //有图片就显示删除按钮
+    $('.image-row .image img').each(function () {
+        if ($(this).attr('src') !== '<?php echo $host;?>/static/image/input-image.png') {
+            $(this).siblings('.del-btn').fadeIn();
+        }
+    });
+
+    //模拟事件
+    $('.image-row .column .image').on('click', function () {
+        $(this).parent('.column').children('.img-upload').click();
+    });
+
+    //证件照选择过图片后改变背景图（删除图片会用删除input dom节点再创建相同节点的方法达到清空input file的效果，所以这里用事件代理）
+    $('.image-row').delegate('.img-upload', 'change', function () {
+        var src = URL.createObjectURL($(this)[0].files[0]);
+        //将对应的隐藏删除该图片input的value设置为0
+        $(this).siblings('.img-delete').val('0');
+        //设置预览图片路径
+        $(this).siblings('.image').children('img').attr('src', src);
+        //显示删除按钮
+        $(this).siblings('.image').children('.del-btn').fadeIn();
+    });
+
+    //证件模块删除图片
+    $('.image-row .column .image .del-btn').on('click', function (ev) {
+        //阻止冒泡;
+        ev.stopPropagation();
+        //清空对应的input值
+        var file = $(this).parent('.image').siblings('.img-upload')[0];
+        if (file.outerHTML) {
+            file.outerHTML = file.outerHTML;
+        } else {
+            file.value = '';
+        }
+        //将对应的隐藏删除该图片input的value设置为1，表示删除该图片
+        $(this).parent('.image').siblings('.img-delete').val('1');
+        //设置预览图为默认图
+        $(this).siblings('img').attr('src', '<?php echo $host;?>/static/image/input-image.png');
+        //隐藏删除按钮
+        $(this).fadeOut();
+    });
+</script>
+</html>

@@ -1,0 +1,32 @@
+.text-row .column_adv {
+    width: 285px;
+    height: 100%;
+    line-height: 40px;
+    font-size: 15px;
+    color: #4a4a4a;
+	margin-right: 67px;
+}
+.text-row .column_adv .radio-item:first-of-type {
+    margin-right: 50px;
+}
+.text-row .column_adv .radio-item {
+    display: inline-block;
+    width: 70px;
+}
+.text-row .column_adv .text {
+    font-size: 16px;
+    color: #4a4a4a;
+    display: inline-block;
+    width: 80px;
+}
+.image-row .column .image .del-btn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/image/close-btn3.png);
+    border-radius: 50%;
+    z-index: 99999;
+}

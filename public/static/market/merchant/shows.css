@@ -1,0 +1,69 @@
+/*列表*/
+.content-wrapper .lists {
+    width: 100%;
+/*    min-height: 200px;*/
+    margin-top: 18px;
+}
+
+.content-wrapper .lists table {
+    width: 100%;
+}
+
+.content-wrapper .lists thead tr {
+    background: #f2f2f2;
+}
+
+.content-wrapper .lists tr {
+    border-bottom: 2px solid #f6f6f6;
+}
+
+.content-wrapper .lists th, .content-wrapper .lists td {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #646464;
+}
+
+.content-wrapper .lists input[type='text'] {
+    width: 110px;
+    height: 20px;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 15px;
+    color: #606060;
+    border: 1px solid #ccc;
+}
+
+.content-wrapper .lists input[type='radio']{
+    vertical-align: middle;
+}
+
+.content-wrapper .lists button{
+    width: 50px;
+    height: 25px;
+    background: #38adff;
+    border: none;
+    border-radius: 3px;
+    line-height: 25px;
+    color: #fff;
+}
+.news{
+    width: 100%;
+
+    margin-top: 18px;  
+    border: 2px solid #F2F2F2;
+    background: #F2F2F2; 
+}
+.news_info{
+    color: #606060;
+    margin-left: 5px;
+    margin-top:25px;
+    width: 25%;
+    float: left;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    border: 2px solid #F2F2F2;
+    background: #F2F2F2; 
+}

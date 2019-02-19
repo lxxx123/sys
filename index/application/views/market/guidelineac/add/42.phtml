@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>流动商户- 添加</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=749884370">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">流动商户 - 添加</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_add_post/add_post"  method="post">
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">姓名：</span>
+                <input type="text" name="field_id[100]" required>
+            </div>
+            <div class="column">
+                <span class="text">性别：</span>
+                <div class="radio-item">
+                    <input type="radio" name="field_id[101]" id="male" value="1" checked>
+                    <label for="male" class="radio-label">男</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="field_id[101]" id="female" value="0">
+                    <label for="female" class="radio-label">女</label>
+                </div>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">联系方式：</span>
+                <input type="text" name="field_id[102]" required>
+            </div>
+            <div class="column">
+                <span class="text">身份证号：</span>
+                <input type="text" name="field_id[103]" required>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">摊位编号：</span>
+                <select  name="field_id[324]" >
+                    <option value="0" selected disabled>摊位编号</option>
+                </select>
+            </div>
+            <div class="column">
+                <span class="text">摊位类型：</span>
+                <select  name="field_id[105]" >
+                    <option value="0" selected disabled>请选择类别</option>
+                    <option value="350">副食品</option>
+                    <option value="351">豆制品</option>
+                    <option value="352">水产</option>
+                    <option value="353">其他</option>
+                    <option value="354">鲜肉</option>
+                    <option value="355">蔬菜</option>
+                    <option value="356">禽蛋</option>
+                    <option value="357">卤味</option>
+                    <option value="358">盘菜</option>
+                    <option value="359">家禽</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-row">
+            <div class="column">
+                <span class="text">开始时间：</span>
+                <input id="start_time" type="text" name="field_id[106]" required readonly>
+            </div>
+            <div class="column">
+                <span class="text">结束时间：</span>
+                <input id="end_time" type="text" name="field_id[107]" required readonly>
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/flow_merchant/add.js?hash=161698498"></script>
+</body>
+</html>

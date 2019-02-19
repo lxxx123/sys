@@ -1,0 +1,205 @@
+/*根*/
+#root {
+    display: flex;
+}
+
+/*左边部分*/
+.left {
+    width: 258px;
+    height: 639px;
+    padding-top: 30px;
+    border-right: 1px solid #e2e2e2;
+}
+
+.trade {
+    height: 116px;
+    overflow: hidden;
+}
+
+.todo {
+    height: 116px;
+    border-top: 1px solid #eee;
+    overflow: hidden;
+}
+
+.inform {
+    border-top: 1px solid #eee;
+}
+
+.left .info-list {
+    padding: 10px 20px 10px 14px;
+}
+
+.left .info-item {
+    display: flex;
+    justify-content: space-between;
+    height: 38px;
+}
+
+.left .toggle {
+    display: block;
+    margin: 20px 0;
+    padding-right: 14px;
+    text-align: right;
+    font-size: 15px;
+    color: #38adff;
+}
+
+.left .toggle .icon{
+    display: inline-block;
+    transition: transform .5s;
+}
+
+.left .info-item .key {
+    height: 100%;
+    line-height: 38px;
+    text-align: left;
+    font-size: 14px;
+    color: #939393;
+}
+
+.left .info-item .value {
+    position: relative;
+    line-height: 38px;
+    text-align: right;
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+.left .message .value::after, .left .notice .value::after {
+    position: absolute;
+    top: 9px;
+    right: -6px;
+    content: '';
+    width: 6px;
+    height: 6px;
+    /*background: #ff1e39;*/
+    border-radius: 50%;
+}
+
+/*右边部分*/
+.right {
+    position: relative;
+    width: 822px;
+    height: 639px;
+}
+
+.right .chart-wrapper {
+    width: 760px;
+    height: 280px;
+    margin: 44px auto 0 auto;
+}
+
+.right .recommend-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 690px;
+    height: 220px;
+    margin: 19px auto 0 auto;
+}
+
+.right .recommend-wrapper li {
+    width: 70px;
+    height: 70px;
+    margin: 0 23px;
+}
+
+.right .recommend-wrapper li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-top: 53px;
+    background-size: 45px 45px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-align: center;
+    font-size: 15px;
+    color: #585858;
+}
+
+.right .recommend-wrapper li:nth-child(1) a {
+    background-image: url("/static/image/recommend-1.png");
+}
+
+.right .recommend-wrapper li:nth-child(2) a {
+    background-image: url("/static/image/recommend-2.png");
+}
+
+.right .recommend-wrapper li:nth-child(3) a {
+    background-image: url("/static/image/recommend-3.png");
+}
+
+.right .recommend-wrapper li:nth-child(4) a {
+    background-image: url("/static/image/recommend-4.png");
+}
+
+.right .recommend-wrapper li:nth-child(5) a {
+    background-image: url("/static/image/recommend-5.png");
+}
+
+.right .recommend-wrapper li:nth-child(6) a {
+    background-image: url("/static/image/recommend-6.png");
+}
+
+.right .recommend-wrapper li:nth-child(7) a {
+    background-image: url("/static/image/recommend-7.png");
+}
+
+.right .recommend-wrapper li:nth-child(8) a {
+    background-image: url("/static/image/recommend-8.png");
+}
+
+.right .recommend-wrapper li:nth-child(9) a {
+    background-image: url("/static/image/recommend-9.png");
+}
+
+.right .recommend-wrapper li:nth-child(10) a {
+    background-image: url("/static/image/recommend-10.png");
+}
+
+.right .modal{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    z-index: 999;
+    cursor: pointer;
+}
+.right .modal .title{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(216,82,78);
+}
+
+.right .modal .info{
+    padding: 5px 0;
+    border-top: 1px solid #ccc;
+}
+
+.right .modal .item{
+    padding: 0 5px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.right .modal .item .text{
+    display: inline-block;
+    width: 250px;
+    height: 100%;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.right .modal .item a{
+    float: right;
+    color: #38adff;
+}

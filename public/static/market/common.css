@@ -1,0 +1,446 @@
+/*根*/
+#root {
+    display: flex;
+    width: 100%;
+    height: 624px;
+}
+
+/*左侧导航栏*/
+.nav-wrapper {
+    width: 152px;
+    height: inherit;
+    background: #f4f6f8;
+    padding-top: 48px;
+    border-right: 1px solid #dedede;
+}
+
+.nav-wrapper .nav {
+    width: 100%;
+}
+
+.nav-wrapper .nav li {
+    width: 100%;
+    height: 36px;
+    margin-bottom: 10px;
+}
+
+.nav-wrapper .nav .active a {
+    background: #38adff;
+    color: #ffffff;
+}
+
+.nav-wrapper .nav li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 36px;
+    text-align: center;
+    font-size: 14px;
+    color: #4a4a4a;
+    transition: all .5s;
+}
+
+.nav-wrapper .nav li a:hover {
+    background: #38adff;
+    color: #ffffff;
+}
+
+/*右侧列表*/
+
+.content-wrapper {
+    position: relative;
+    width: 930px;
+    height: inherit;
+    padding: 48px 30px 0 30px;
+}
+
+.content-wrapper .operate {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 15px;
+    color: #606060;
+}
+
+.content-wrapper .operate .left {
+    height: 100%;
+}
+
+.content-wrapper .operate .right {
+    height: 100%;
+}
+
+.content-wrapper .operate input {
+    width: 117px;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 15px;
+    color: #606060;
+    border: 1px solid #ccc;
+}
+
+.content-wrapper .operate .date {
+    text-align: center;
+}
+
+.content-wrapper .operate button {
+    position: relative;
+    min-width: 60px;
+    height: 30px;
+    margin-left: 3px;
+    background: #288df0;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.content-wrapper .operate button .tips {
+    position: absolute;
+    top: 40px;
+    left: -66px;
+    display: none;
+    width: 153px;
+    height: 33px;
+    background: #fff;
+    content: '你还没有选择任何内容！';
+    border: 1px solid #ececec;
+    border-radius: 9px;
+    box-shadow: 0 9px 12px rgba(0, 0, 0, .08);
+    font-size: 12px;
+    color: #288df0;
+    cursor: default;
+}
+
+/*列表*/
+.content-wrapper .list {
+    width: 100%;
+    min-height: 360px;
+    margin-top: 18px;
+}
+
+.content-wrapper .list table {
+    width: 100%;
+}
+
+.content-wrapper .list thead tr {
+    background: #f2f2f2;
+}
+
+.content-wrapper .list tr {
+    border-bottom: 2px solid #f6f6f6;
+}
+
+.content-wrapper .list th, .content-wrapper .list td {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #646464;
+}
+
+.content-wrapper .list input[type='text'] {
+    width: 110px;
+    height: 20px;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 15px;
+    color: #606060;
+    border: 1px solid #ccc;
+}
+
+.content-wrapper .list input[type='radio']{
+    vertical-align: middle;
+}
+
+.content-wrapper .list button{
+    width: 50px;
+    height: 25px;
+    background: #38adff;
+    border: none;
+    border-radius: 3px;
+    line-height: 25px;
+    color: #fff;
+}
+
+/*分页*/
+.content-wrapper .page-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    margin-top: 60px;
+}
+
+.page-wrapper .pagination {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.page-wrapper .pagination li {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #d1d1d1;
+}
+
+.page-wrapper .pagination li:first-child, .page-wrapper .pagination li:last-child {
+    border: none;
+    background: #ccc;
+}
+
+.page-wrapper .pagination li a, .page-wrapper .pagination li span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    color: #606060;
+    transition: all .3s;
+}
+
+.page-wrapper .pagination li:hover, .page-wrapper .pagination .active {
+    border: none;
+}
+
+.page-wrapper .pagination li a:hover, .page-wrapper .pagination .active span {
+    background: #288df0;
+    color: #fff;
+}
+
+/*上一页下一页没有激活状态*/
+.page-wrapper .pagination li:first-child a:hover, .page-wrapper .pagination li:last-child a:hover {
+    background: #ccc;
+    color: #606060;
+}
+
+.page-wrapper .total, .page-wrapper .go {
+    height: 100%;
+    margin: 0 10px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: #606060;
+}
+
+.page-wrapper .go input {
+    width: 40px;
+    height: 28px;
+    margin: 0 5px;
+    border: 1px solid #d1d1d1;
+    text-align: center;
+    font-size: 15px;
+    color: #606060;
+}
+
+.page-wrapper .go button {
+    margin-left: 10px;
+    background: #f2f2f2;
+    border: 1px solid #d0d0d0;
+    cursor: pointer;
+}
+
+/*删除确认框*/
+.confirm {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 183px;
+    height: 111px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 9px;
+    box-shadow: 0 9px 12px rgba(0, 0, 0, .08);
+}
+
+.confirm .text {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.confirm .btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.confirm .btn-wrapper button {
+    width: 57px;
+    height: 30px;
+    margin: 0 6px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    line-height: 30px;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.confirm #del-confirm {
+    background: #288df0;
+}
+
+.confirm #del-cancel {
+    background: #cccccc;
+}
+
+ /*删除失败提示*/
+.toast {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 183px;
+    height: 111px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 9px;
+    box-shadow: 0 9px 12px rgba(0, 0, 0, .08);
+}
+
+.toast .text {
+    height: 111px;
+    line-height: 111px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+.toast_num {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 183px;
+    height: 111px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 9px;
+    box-shadow: 0 9px 12px rgba(0, 0, 0, .08);
+}
+
+.toast_num .text {
+    height: 111px;
+    line-height: 111px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+.toasts {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 183px;
+    height: 111px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 9px;
+    box-shadow: 0 9px 12px rgba(0, 0, 0, .08);
+}
+
+.toasts .text {
+    height: 111px;
+    line-height: 111px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+/*隐藏更多查询输入框*/
+.query-input {
+    display: none;
+}
+
+/*图表*/
+.content-wrapper .chart {
+    width: 100%;
+    min-height: 460px;
+    margin-top: 18px;
+}
+
+/*商品追溯*/
+.content-wrapper .trace {
+    padding: 0 60px;
+    margin-top: 20px;
+}
+
+.content-wrapper .trace .trace-item {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 17px;
+    border: 1px solid #ededed;
+    border-radius: 6px;
+}
+
+.content-wrapper .trace .trace-item .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 66px;
+}
+
+.content-wrapper .trace .trace-item .left .photo{
+    display: block;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.content-wrapper .trace .trace-item .left .text{
+    display: block;
+    width: 50px;
+    margin-left: 9px;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.content-wrapper .trace .trace-item .right {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 550px;
+    padding: 16px;
+}
+
+.content-wrapper .trace .trace-item .right .info li{
+    height: 25px;
+    line-height: 25px;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+.content-wrapper .trace .trace-item .right .more-info{
+    width: 83px;
+    height: 27px;
+    background:#fff;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+    color: #4a4a4a;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 投诉管理</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/common.css?hash=15734244"></head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <li class="active" data-parent="5"><a
+                    href="/market/complaintsac/index/parent_id/5.html">投诉管理</a></li>
+            <li><a href="/market/diggac/index/parent_id/5.html">点赞管理</a></li>
+            <li><a href="/market/push_praiseac/index/parent_id/5.html">点评管理</a></li>
+            <li><a href="/market/creditac/index/parent_id/5.html">信用分析</a></li>
+            <li><a href="/market/thumb_descac/index/parent_id/5.html">商户点赞排行榜</a></li>
+            <li><a href="/market/review_descac/index/parent_id/5.html">商户点评排行榜</a></li>
+            <li><a href="/market/complaints_countac/index/parent_id/5.html">商户投诉统计</a></li>
+            <li><a href="/market/score_queryac/index/parent_id/5.html">商户积分查询</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <!--操作-->
+        <div class="operate">
+            <div class="left">
+                <span>商户姓名：</span>
+                <input type="text" id="merchant_name" value="">
+                &nbsp;
+                <span>日期：</span>
+                <input type="text" id="create_time" class="date" readonly value="">
+                <button id="query-btn">查询</button>
+            </div>
+            <div class="right">
+                <!-- <button id="btn_add">添加</button>
+                <button id="btn_edit">修改<div class="tips">您还没有选择任何内容</div></button> -->
+                <button id="btn_del">删除<div class="tips">您还没有选择任何内容</div></button>
+                <!-- <button id="btn_export">导出</button> -->
+            </div>
+        </div>
+        <!--列表-->
+        <div class="list">
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="check-all">
+                    </th>
+                    <th>投诉时间</th>
+                    <th>来源</th>
+                    <th>商户姓名</th>
+                    <th>摊位号</th>
+
+
+                    <th>操作</th>
+                    <th>处理情况</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="checkbox" value="104" name="ids"></td>
+                    <td>2018-11-21 14:35:56</td>
+                    <td> 操作员录入</td>
+                    <td>金城武</td>
+                    <td>999A</td>
+
+                    <td><a href="/market/complaintsac/show/id/104/page/1" class="fa fa-search"></a></td>
+                    <td>
+                        <a class="pass" href="#" data-id="104",data-page="1">处理</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a class="no_pass" href="#" data-id="104">撤销</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="103" name="ids"></td>
+                    <td>2018-11-17 17:49:56</td>
+                    <td> 操作员录入</td>
+                    <td>张哈</td>
+                    <td></td>
+
+                    <td><a href="/market/complaintsac/show/id/103/page/1" class="fa fa-search"></a></td>
+                    <td>
+                        <span>已处理</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="102" name="ids"></td>
+                    <td>2018-11-16 22:48:59</td>
+                    <td> 操作员录入</td>
+                    <td>金城武</td>
+                    <td>999A</td>
+
+                    <td><a href="/market/complaintsac/show/id/102/page/1" class="fa fa-search"></a></td>
+                    <td>
+                        <span>已处理</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="101" name="ids"></td>
+                    <td>2018-11-16 22:26:04</td>
+                    <td> 操作员录入</td>
+                    <td>金城武</td>
+                    <td>999A</td>
+
+                    <td><a href="/market/complaintsac/show/id/101/page/1" class="fa fa-search"></a></td>
+                    <td>
+                        <span>已处理</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="100" name="ids"></td>
+                    <td>2018-11-14 15:57:29</td>
+                    <td> 操作员录入</td>
+                    <td>金城武</td>
+                    <td>999A</td>
+
+                    <td><a href="/market/complaintsac/show/id/100/page/1" class="fa fa-search"></a></td>
+                    <td>
+                        <span>已处理</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="99" name="ids"></td>
+                    <td>2018-11-13 23:52:56</td>
+                    <td> 操作员录入</td>
+                    <td>金城武</td>
+                    <td>999A</td>
+
+                    <td><a href="/market/complaintsac/show/id/99/page/1" class="fa fa-search"></a></td>
+                    <td>
+                        <span>已处理</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="98" name="ids"></td>
+                    <td>2018-11-13 21:26:56</td>
+                    <td> 操作员录入</td>
+                    <td>金城武</td>
+                    <td>999A</td>
+
+                    <td><a href="/market/complaintsac/show/id/98/page/1" class="fa fa-search"></a></td>
+                    <td>
+                        <span>已撤销</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="97" name="ids"></td>
+                    <td>2018-11-12 21:27:43</td>
+                    <td> 操作员录入</td>
+                    <td>金城武</td>
+                    <td>999A</td>
+
+                    <td><a href="/market/complaintsac/show/id/97/page/1" class="fa fa-search"></a></td>
+                    <td>
+                        <span>已撤销</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="96" name="ids"></td>
+                    <td>2018-11-12 21:24:26</td>
+                    <td> 操作员录入</td>
+                    <td>金城武</td>
+                    <td>999A</td>
+
+                    <td><a href="/market/complaintsac/show/id/96/page/1" class="fa fa-search"></a></td>
+                    <td>
+                        <span>已撤销</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--分页-->
+        <div class="page-wrapper">
+            <div class="page-list"></div>
+            <div class="total">共1页</div>
+            <div class="go">去第<input type="text" id="page" value="1">页
+                <button id="go">确定</button>
+            </div>
+        </div>
+        <!--删除确认框-->
+        <div class="confirm">
+            <div class="text">确定要删除吗？</div>
+            <div class="btn-wrapper">
+                <button id="del-confirm">确定</button>
+                <button id="del-cancel">取消</button>
+            </div>
+        </div>
+        <!--删除失败提示-->
+        <div class="toast">
+            <div class="text">删除失败!</div>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/laydate/laydate.js"></script>
+<script src="<?php echo $host;?>/static/market/complaints/index.js?hash=862869467"></script></body>
+</html>

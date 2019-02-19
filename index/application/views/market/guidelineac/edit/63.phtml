@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>商户广告 - 修改</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/lib/css/cropper.min.css">
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/stall_adv/stall_adv.css">
+
+    <link rel="stylesheet" href="<?php echo $host;?>/static/market/add&edit&show.css?hash=69793869">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <div class="back-btn"></div>
+    <div class="title">商户广告 - 修改</div>
+    <!--form表单-->
+    <form id="form" action="/market/guidelineac_edit_post/edit_post" enctype="multipart/form-data" method="post">
+
+        <!--当前页-->
+       <!-- <input type="hidden" name="page" value="1">-->
+
+        <input type="hidden" id="marketId" name="marketId" value="<?php echo $marketId; ?>">
+        <input type="hidden" id="typeParentId" name="typeParentId" value="<?php echo $typeParentId; ?>">
+        <input type="hidden" id="fieldTypeId" name="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+        <input type="hidden" id="uid" name="uid" value="<?php echo $uid; ?>">
+
+        <input type="hidden" id="" name="redirect" value="/market/guidelineac?typeParentId=<?php echo $typeParentId; ?>&fieldTypeId=<?php echo $fieldTypeId; ?>">
+
+        <!--文字信息行-->
+        <div class="text-row">
+            <div class="column">
+                <span class="text">摊位编号：</span>
+                <input type="text" name="field_id[182][<?php echo $data[182]['id']; ?>]" required value="<?php echo $data[182]['field_value']; ?>">
+            </div>
+            <div class="column">
+                <span class="text">广告类别：</span>
+                <div class="radio-item">
+                    <input id="male" type="radio" name="field_id[183][<?php echo $data[183]['id']; ?>]" value="1" <?php echo $data[183]['field_value']==1?'checked':''; ?> >
+                    <label for="male" class="radio-label"></label>
+                </div>
+                <div class="radio-item">
+                    <input id="female" type="radio" name="field_id[295][<?php echo $data[183]['id']; ?>]" value="2"  <?php echo $data[183]['field_value']==2?'checked':''; ?> >
+                    <label for="female" class="radio-label">右侧</label>
+                </div>
+            </div>
+        </div>
+        <!--证件图片行-->
+        <div class="image-row">
+            <div class="column">
+                <div class="image">
+                    <div class="del-btn"></div>
+                    <img src="<?php echo $host;?>/static/image/input-image.png" alt="" >
+                </div>
+                <input class="img-upload" type="file" name="field_id[184][<?php echo $data[184]['id']; ?>]" value="<?php echo $data[184]['field_value']; ?>" accept="image/*">
+                <input class="img-delete" type="hidden" name="ad_img_delete" value="0">
+                <div class="text">图片</div>
+            </div>
+            <div class="column">
+
+            </div>
+        </div>
+        <!--分割线-->
+        <div class="line-row"></div>
+        <!--提交按钮行-->
+        <div class="button-row">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<!--javascript-->
+<script src="<?php echo $host;?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host;?>/static/lib/js/cropper.js"></script>
+
+<script src="<?php echo $host;?>/static/market/stall_adv/add.js?hash=249008482"></script>
+</body>
+</html>

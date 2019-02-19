@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>智慧农贸管理平台 - 管理制度</title>
+    <meta name="keywords" content="智慧农贸">
+    <meta name="description" content="智慧农贸">
+    <!--css-->
+    <link rel="stylesheet" href="<?php echo $host; ?>/static/lib/css/reset.css">
+    <link rel="stylesheet" href="<?php echo $host; ?>/static/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $host; ?>/static/market/common.css?hash=211097950">
+</head>
+<body>
+<!--html-->
+<div id="root">
+    <input type="hidden" id="marketId" value="<?php echo $marketId; ?>">
+    <input type="hidden" id="typeParentId" value="<?php echo $typeParentId; ?>">
+    <input type="hidden" id="fieldTypeId" value="<?php echo $fieldTypeId; ?>">
+    <input type="hidden" id="eventDelName" name="eventDelName" value="delete.fieldTypeId.<?php echo $fieldTypeId; ?>">
+    <?php
+    if(is_array($fieldIds)){
+        echo '<input type="hidden" id="fieldIds" value=\''.json_encode($fieldIds).'\'>';
+    }
+    ?>
+
+    <?php require APPLICATION_PATH . '/application/views/nav.phtml'; ?>
+    <div class="content-wrapper">
+        <div class="operate">
+            <div class="left">
+                <span>名称：</span>
+                <input type="text" value="<?php echo \Linkun\Safety\Clear::escapeString($key); ?>" name="task_name"
+                       id="search_txt">
+                <button id="btn_search">查询</button>
+            </div>
+            <div class="right">
+                <button id="btn_add">添加</button>
+                <button id="btn_edit">修改
+                    <div class="tips">您还没有选择任何内容</div>
+                </button>
+                <button id="btn_del">删除
+                    <div class="tips">您还没有选择任何内容</div>
+                </button>
+                <button id="btn_export">导出</button>
+            </div>
+        </div>
+        <div class="list">
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="check-all">
+                    </th>
+                    <?php
+                    foreach ($fieldDatas as $row) {
+                        if(!$row['show_list']){
+                            continue;
+                        }
+                        echo "<th>{$row['display_value']}</th>";
+                    }
+                    ?>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                $queryStr = http_build_query($query);
+                foreach ($dataId as $uid) {
+                    if (isset($data[$uid])) {
+                        echo '<tr>';
+                        echo "<td><input type=\"checkbox\" name=\"ids\" value=\"{$uid}\"></td>";
+
+                        foreach ($fieldDatas as $fieldId) {
+                            if(!$fieldId['show_list']){
+                                continue;
+                            }
+                            $find = false;
+                            foreach ($data[$uid] as $row) {
+                                if ($row['field_id'] == $fieldId['id']) {
+                                    if ($row['article_id']) {
+                                        echo "<td><a href=\"/market/guidelineac_show?field_id={$fieldId['id']}&uid={$uid}&article_id={$row['article_id']}&{$queryStr}\" class=\"fa fa-search\"></a></td>";
+                                    } elseif ($fieldId['type']==1 && isset($sysDataList[$row['field_value']])){
+                                        echo "<td>{$sysDataList[$row['field_value']]}</td>";
+                                    } else {
+                                        echo "<td>{$row['field_value']}</td>";
+                                    }
+                                    $find = true;
+                                    break;
+                                }
+                            }
+                            if (!$find) {
+                                echo "<td></td>";
+                            }
+
+                        }
+                        echo '</tr>';
+                    }
+                }
+                ?>
+                </tbody>
+            </table>
+        </div>
+             
+        <div class="page-wrapper">
+            <?php $pgs = ceil($total / $perpage); ?>
+            <div class="page-list">
+                <?php
+                if ($pgs > 1) {
+                    ?>
+                    <ul class="pagination">
+                        <?php
+                        if ($page > 1) {
+                            $query['page'] = abs($page - 1);
+                            $queryStr = http_build_query($query);
+                            echo "<li><a href='/market/guidelineac?$queryStr'>&laquo;</a></li>";
+                        } else {
+                            echo "<li class=\"disabled\"><span>&laquo;</span></li>";
+                        }
+                        for ($i = 1; $i <=$pgs; $i++) {
+                            $class = '';
+                            if ($i == $page) {
+                                $class = 'active';
+                                echo "<li class=\"$class\"><span>{$i}</span></li>";
+                            }else{
+                                $query['page'] = $i;
+                                $queryStr = http_build_query($query);
+                                echo "<li class=\"$class\"><a href='/market/guidelineac?$queryStr'>{$i}</a></li>";
+                            }
+
+                        }
+                        $query['page'] = $page + 1;
+                        if ($query['page'] <= $pgs) {
+                            $queryStr = http_build_query($query);
+                            echo "<li class=\"$class\"><a href='/market/guidelineac?$queryStr'>&raquo;</a></li>";
+                        }
+                        ?>
+
+                    </ul>
+                    <?php
+                }
+                ?>
+            </div>
+            <div class="total">共<?php echo $pgs; ?>页</div>
+            <div class="go">去第<input type="text" id="page" value="<?php echo $page; ?>">页
+                <button id="sure">确定</button>
+            </div>
+        </div>
+        <!--删除确认框-->
+        <div class="confirm">
+            <div class="text">确定要删除吗？</div>
+            <div class="btn-wrapper">
+                <button id="del-confirm">确定</button>
+                <button id="del-cancel">取消</button>
+            </div>
+        </div>
+        <!--删除失败提示-->
+        <div class="toast">
+            <div class="text">删除失败!</div>
+        </div>
+    </div>
+</div>
+<!--javascript-->
+<script src="<?php echo $host; ?>/static/lib/js/jquery.1.11.3.js"></script>
+<script src="<?php echo $host; ?>/static/market/guideline/index.js?hash=562086347"></script>
+</body>
+</html>
